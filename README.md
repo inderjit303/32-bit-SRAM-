@@ -245,10 +245,15 @@ Fig 11.  Makerchip plots for PRS generator (Compare value 10000000)
 8. Model created successfully
 
 # Acknowlegdements
-1. FOSSEE Team, IIT Bombay
-2. MakerChip, Redwood EDA
-3. Sumanto Kar, eSim Team, FOSSEE
-4. VLSI System Design (VSD) Corp. Pvt. Ltd India
+(http://iitb.ac.in/)
+(https://www.google.co.in/)
+[FOSSEE Team, IIT Bombay](https://fossee.in/)
+(https://spoken-tutorial.org/)
+[VLSI System Design (VSD) Corp. Pvt. Ltd India](https://www.vlsisystemdesign.com/)
+(https://www.c2s.gov.in/)
+MakerChip, Redwood EDA
+Sumanto Kar, eSim Team, FOSSEE
+
 
 # References
 [1] Jesal P. Gajjar1, Aesha S. Zala2, Sandeep K. Aggarwal, Design and Analysis of 32 bit SRAM architecture in 90nm CMOS Technology, International Research Journal of Engineering and Technology (IRJET), Volume 03, Issue 04, April 2016 
