@@ -245,14 +245,15 @@ Fig 11.  Makerchip plots for PRS generator (Compare value 10000000)
 8. Model created successfully
 
 # Acknowlegdements
-(http://iitb.ac.in/)
-(https://www.google.co.in/)
+[(http://iitb.ac.in/)]
+
+[(https://www.google.co.in/)]
 [FOSSEE Team, IIT Bombay](https://fossee.in/)
-(https://spoken-tutorial.org/)
+[(https://spoken-tutorial.org/)]
 [VLSI System Design (VSD) Corp. Pvt. Ltd India](https://www.vlsisystemdesign.com/)
-(https://www.c2s.gov.in/)
-MakerChip, Redwood EDA
-Sumanto Kar, eSim Team, FOSSEE
+[(https://www.c2s.gov.in/)]
+[MakerChip, Redwood EDA]
+[Sumanto Kar, eSim Team, FOSSEE]
 
 
 # References
