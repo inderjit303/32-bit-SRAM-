@@ -27,7 +27,6 @@ Today, Static Random Access Memory (SRAM) has become a standard memory element o
 # Reference Circuit Diagram
 The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in Fig 1. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. First, a 8 bit SRAM cell is build using eight 1 Bit SRAM. They are accessed by 3 bit address using a 3x8 decoder which is implemented in digital domain as shown in Fig 2. 
 
-
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194602256-0cc2c215-91e0-4d79-bb9c-70e9178ee6d6.png">
 </p> 
@@ -35,37 +34,49 @@ The structure of a 6 transistor SRAM cell, storing one bit of information, can b
 Fig 1. Standard 6T SRAM Cell 
 </p>
 
+
 <p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157651325-4f1d954d-92be-4244-bfab-5194208e27d0.png">
+<img src="https://user-images.githubusercontent.com/99788755/194602977-dca7491b-b578-4d20-a333-69392e5afe3c.png">
 </p> 
 <p align="center">
-Fig 2. Analog Block: Second order Sallen Key Low Pass Filter
+Fig 2. Digital Block: 3x8 Decoder 
 </p>
 
+1 bit RAM cell consists of data writer circuit, 6T RAM cell, pre-charge circuit and a sense amplifier all implemented in analog domain using eSim as shown in Fig 3. 
+
 <p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157652101-c89aec12-923b-4a05-b98c-f48f9760511a.png">
+<img src="https://user-images.githubusercontent.com/99788755/194603243-135b7f27-5ea2-4242-be6f-ff23c8fe97eb.png">
 </p> 
 <p align="center">
-Fig 3. Digital Sine wave generator block diagram
+Fig 3. Analog Block: 1 bit SRAM Cell 
 </p>
 
-# Reference waveform
+The 3x8 decoder will be used to select the 1-bit RAM cell to which we want to perform the read/write operation. Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic during a read operation. The function of sense amplifier is to amplify the very small analog differential voltage between the bit-lines during a read operation and provide a digital output. In read operation, the bit-lines are pre-charged to Vdd during the read operation, so if a write operation occurs, one of the bit-lines should driven back to low logic before enabling access transistors. Write drivers are used for this purpose.
 
-Fig. 4 depicts desired waveforms at the output of analog Low pass filter which is digitally controlled with input clock frequency.  
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157652251-52f845f9-a6f5-4633-b26d-20374c6a3c13.png">
+<img src="https://user-images.githubusercontent.com/99788755/194603328-39bbf36f-b60d-43d7-a7e8-ab6d63ed44bc.png">
 </p> 
 <p align="center">
-Fig 4.  Output of Analog filter
+Fig 4. Functional block of 32 bit SRAM 
 </p>
 
-# Reference circuit details 
-Here, the digital block consists of a 8 bit pseudo-random-sequence (PRS) generator running at clock frequency of fCLK = 1MHz. This structure is called as Fibonacci Linear feedback shift register (LFSR). The bit positions that affect the next state are called the taps. In the Fig 1, the taps are [6,5,4]. The rightmost bit of the LFSR is called the output bit. The taps are XORed sequentially with the output bit and then fed back into the leftmost bit. The sequence of bits in the rightmost position is called the Pseudo random sequence output which is finite stream of numbers in the range 1-255 equally distributed. In addition a compare function is added, which turns one digital output pin high whenever a value in the shift register (SR) is less the value of the compare input. This will create a stream of high pulses proportional to the compare value. 
+Digital block will be implemented in Verilog, whereas analog block will be implemented in eSim as shown in Fig 4. After creation of the all the symbols using sub-circuit feature, interconnection of the Decoder and the 1-Bit SRAMs will be carried out as shown in the schematic to create the 8-Bit SRAM and then create another sub circuit symbol to interconnect address decoder and 32 bit SRAM. 
 
-Next it is fed to Sine wave look up table (LUT), which look-up table method for sine wave generation. This method, involves the synthesis of sine waves with frequencies which are multiples of the fundamental frequency for which the table elements are calculated and used to approximate a sine wave. Digital block will be implemented in Verilog, whereas analog block consisting of analog LPF will be implemented in eSim as shown in Fig 3. The digital output of the PRS generator is then driving a 2nd order low-pass filter build using standard analog components such opamp, resistors and capacitors as shown in Fig 2. Analog block is implemented using 2nd order Sallen key filter Low pass filter designed for a cutoff frequency fOUT = 1 KHz. 
+
+# Reference circuit waveforms
+
+Fig. 5 depicts the Transient input and output waveforms for a 8 bit SRAM
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194603953-d528f7cc-c15c-4862-90e5-fb5bada1ad4d.png">
+</p> 
+<p align="center">
+Fig 5. Transient input and output waveforms of 8 bit SRAM
+</p>
+
  
-# Software Used
+# Softwares Used
 
 ## eSim
 It is an Open Source EDA developed by FOSSEE, IIT Bombay. It is used for electronic circuit simulation. It is made by the combination of two software namely NgSpice and KiCAD.
@@ -82,6 +93,9 @@ https://www.makerchip.com/
 
 ## Verilator
 It is a tool which converts Verilog code to C++ objects. Refer: https://www.veripool.org/verilator/
+
+## Google Sky Water 130nm PDK 
+
 
 # Circuit diagram in eSim 
 
@@ -275,294 +289,7 @@ module inderjit_digi_sinewave_generator(clk, dsine, data_out);
     end
 endmodule
 ```
-## Verilog code (Attempt 3) 
-```
-module inderjit_digi_sinewave_generator(clk, dsine, data_out);
-//declare input and output
-    input clk;
-    input dsine; 
-    output [7:0] data_out;
-//8 bit Sine lookup table   
-    reg [7:0] sine [0:256];
-//Internal signals  
-    integer i;  
-    reg [7:0] data_out; 
- //Initialize the sine values with samples. 
 
-        initial begin
-        i = 0;
-        sine[0] = 0;
-        sine[1] = 2;
-        sine[2] = 5;
-        sine[3] = 7;
-        sine[4] = 10;
-        sine[5] = 12;
-        sine[6] = 15;
-        sine[7] = 17;
-        sine[8] = 19;
-        sine[9] = 22;
-        sine[10] = 24;
-        sine[11] = 27;
-        sine[12] = 29;
-        sine[13] = 31;
-        sine[14] = 34;
-        sine[15] = 36;
-        sine[16] = 39;
-         sine[17] = 40;
-        sine[18] = 43;
-        sine[19] = 45;
-        sine[20] = 47;
-        sine[21] = 49;
-        sine[22] = 51;
-        sine[23] = 53;
-        sine[24] = 55;
-        sine[25] = 57;
-        sine[26] = 59;
-        sine[27] = 61;
-        sine[28] = 63;
-        sine[29] = 65;
-        sine[30] = 67;
-        sine[31] = 69;
-        sine[32] = 70;
-        sine[33] = 72;
-         sine[34] = 74;
-        sine[35] = 75;
-        sine[36] = 77;
-        sine[37] = 79;
-        sine[38] = 80;
-        sine[39] = 82;
-        sine[40] = 83;
-        sine[41] = 84;
-        sine[42] = 86;
-        sine[43] = 87;
-        sine[44] = 88;
-        sine[45] = 89;
-        sine[46] = 90;
-        sine[47] = 91;
-        sine[48] = 92;
-        sine[49] = 93;
-        sine[50] = 94;
-         sine[51] = 95;
-        sine[52] = 96;
-        sine[53] = 96;
-        sine[54] = 97;
-        sine[55] = 97;
-        sine[56] = 98;
-        sine[57] = 98;
-        sine[58] = 99;
-        sine[59] = 99;
-        sine[60] = 99;
-        sine[61] = 99;
-        sine[62] = 100;
-        sine[63] = 100;
-        sine[64] = 100;
-        sine[65] = 100;
-        sine[66] = 100;
-        sine[67] = 99;
-         sine[68] = 99;
-        sine[69] = 99;
-        sine[70] = 99;
-        sine[71] = 98;
-        sine[72] = 98;
-        sine[73] = 97;
-        sine[74] = 97;
-        sine[75] = 96;
-        sine[76] = 96;
-        sine[77] = 95;
-        sine[78] = 94;
-        sine[79] = 93;
-        sine[80] = 92;
-        sine[81] = 91;
-        sine[82] = 90;
-        sine[83] = 89;
-        sine[84] = 88;
-         sine[85] = 87;
-        sine[86] = 86;
-        sine[87] = 84;
-        sine[88] = 83;
-        sine[89] = 81;
-        sine[90] = 80;
-        sine[91] = 78;
-        sine[92] = 77;
-        sine[93] = 75;
-        sine[94] = 74;
-        sine[95] = 72;
-        sine[96] = 70;
-        sine[97] = 68;
-        sine[98] = 67;
-        sine[99] = 65;
-        sine[100] = 63;
-        sine[101] = 61;
-         sine[102] = 59;
-        sine[103] = 57;
-        sine[104] = 55;
-        sine[105] = 53;
-        sine[106] = 51;
-        sine[107] = 49;
-        sine[108] = 47;
-        sine[109] = 45;
-        sine[110] = 42;
-        sine[111] = 40;
-        sine[112] = 38;
-        sine[113] = 36;
-        sine[114] = 34;
-        sine[115] = 31;
-        sine[116] = 29;
-        sine[117] = 27;
-        sine[118] = 24;
-         sine[119] = 22;
-        sine[120] = 19;
-        sine[121] = 17;
-        sine[122] = 15;
-        sine[123] = 12;
-        sine[124] = 10;
-        sine[125] = 7;
-        sine[126] = 5;
-           sine[127] = 2;
-           sine[128] = 0;
-        sine[129] = -2;
-        sine[130] = -5;
-        sine[131] = -7;
-        sine[132] = -10;
-        sine[133] = -12;
-        sine[134] = -15;
-        sine[135] = -17;
-        sine[136] = -19;
-        sine[137] = -22;
-        sine[138] = -24;
-        sine[139] = -27;
-        sine[140] = -29;
-        sine[141] = -31;
-        sine[142] = -34;
-        sine[143] = -36;
-        sine[144] = -39;
-         sine[145] = -40;
-        sine[146] = -43;
-        sine[147] = -45;
-        sine[148] = -47;
-        sine[149] = -49;
-        sine[150] = -51;
-        sine[151] = -53;
-        sine[152] = -55;
-        sine[153] = -57;
-        sine[154] = -59;
-        sine[155] = -61;
-        sine[156] = -63;
-        sine[157] = -65;
-        sine[158] = -67;
-        sine[159] = -69;
-        sine[160] = -70;
-        sine[161] = -72;
-         sine[162] = -74;
-        sine[163] = -75;
-        sine[164] = -77;
-        sine[165] = -79;
-        sine[166] = -80;
-        sine[167] = -82;
-        sine[168] = -83;
-        sine[169] = -84;
-        sine[170] = -86;
-        sine[171] = -87;
-        sine[172] = -88;
-        sine[173] = -89;
-        sine[174] = -90;
-        sine[175] = -91;
-        sine[176] = -92;
-        sine[177] = -93;
-        sine[178] = -94;
-         sine[179] = -95;
-        sine[180] = -96;
-        sine[181] = -96;
-        sine[182] = -97;
-        sine[183] = -97;
-        sine[184] = -98;
-        sine[185] = -98;
-        sine[186] = -99;
-        sine[187] = -99;
-        sine[188] = -99;
-        sine[189] = -99;
-        sine[190] = -100;
-        sine[191] = -100;
-        sine[192] = -100;
-        sine[193] = -100;
-        sine[194] = -100;
-        sine[195] = -99;
-         sine[196] = -99;
-        sine[197] = -99;
-        sine[198] = -99;
-        sine[199] = -98;
-        sine[200] = -98;
-        sine[201] = -97;
-        sine[202] = -97;
-        sine[203] = -96;
-        sine[204] = -96;
-        sine[205] = -95;
-        sine[206] = -94;
-        sine[207] = -93;
-        sine[208] = -92;
-        sine[209] = -91;
-        sine[210] = -90;
-        sine[211] = -89;
-        sine[212] = -88;
-         sine[213] = -87;
-        sine[214] = -86;
-        sine[215] = -84;
-        sine[216] = -83;
-        sine[217] = -81;
-        sine[218] = -80;
-        sine[219] = -78;
-        sine[220] = -77;
-        sine[221] = -75;
-        sine[222] = -74;
-        sine[223] = -72;
-        sine[224] = -70;
-        sine[225] = -68;
-        sine[226] = -67;
-        sine[227] = -65;
-        sine[228] = -63;
-        sine[229] = -61;
-         sine[230] = -59;
-        sine[231] = -57;
-        sine[232] = -55;
-        sine[233] = -53;
-        sine[234] = -51;
-        sine[235] = -49;
-        sine[236] = -47;
-        sine[237] = -45;
-        sine[238] = -42;
-        sine[239] = -40;
-        sine[240] = -38;
-        sine[241] = -36;
-        sine[242] = -34;
-        sine[243] = 31;
-        sine[244] = -29;
-        sine[245] = -27;
-        sine[246] = -24;
-         sine[247] = -22;
-        sine[248] = -19;
-        sine[249] = -17;
-        sine[250] = -15;
-        sine[251] = -12;
-        sine[252] = -10;
-        sine[253] = -7;
-        sine[254] = -5;
-           sine[255] = -2;
-           sine[256] = 0;
-        
-    end
-
-    
-    //At every positive edge of the clock, output a sine wave sample.
-    always@ (posedge clk)
-    begin
-        data_out = sine[i];
-        i = i+ 1;
-        if(i == 256)
-            i = 0;
-    end
-
-endmodule
-```
 
 
 ## Makerchip code: 
