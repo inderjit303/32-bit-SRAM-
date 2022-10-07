@@ -1,8 +1,7 @@
-# 32-bit-SRAM-
-32-bit SRAM implementation in eSim using Skywater  130nm CMOS technology 
 
-# Mixed signal design of Digital sinewave generator using eSim:
-This repository contains an attempt to mixed signal design of a 8-bit Digital Sine wave generator using eSim
+# 32-bit SRAM implementation in eSim using Skywater 130nm CMOS technology:
+
+This repository contains an attempt to mixed signal design of a 32-bit SRAM using eSim and Google Skywater 130nm PDK 
 
 - [Abstract](#abstract)
 - [Reference Circuit Diagram](#reference-circuit-diagram)
@@ -23,15 +22,17 @@ This repository contains an attempt to mixed signal design of a 8-bit Digital Si
 - [References](#references)
 
 # Abstract
-Producing and manipulating the sine wave function is a common problem encountered by circuit designers. Sine wave circuits pose a significant design challenge because they represent a constantly controlled linear oscillator. Sine wave circuitry is required in a number of diverse areas, including audio testing, calibration equipment, transducer drives, power conditioning and automatic test equipment (ATE). Control of frequency, amplitude or distortion level is often required and all three parameters must be simultaneously controlled in many applications with analog and digital approaches. This paper presents detailed design of a 8 bit digital sine wave generator with the help of pseudo-random-sequence (PRS) generator, Look-up table (LUT) and analog low pass filter. 
+Today, Static Random Access Memory (SRAM) has become a standard memory element of any Application Specific Integrated Circuit (ASIC), System-On-Chips (SoC), because they are fast, robust, nearly universally found on the same die with microcontrollers and microprocessors. This paper presents detailed implementation of 32 bit SRAM using eSim and SKY130 PDK. SRAM is much faster than DRAM (Dynamic RAM), so to utilize SRAM to the fullest we have the concept of caching the memory i.e we save the data in SRAMs on first load so that in the consecutive load time reduces drastically. SRAM can retain its stored information as long as power is supplied. The term random access means that in an array of SRAM cells each cell can be read or written in any order, no matter which cell was last accessed. SRAMs are majorly used in server based web applications because the servers are usually switched on all the time. 
 
 # Reference Circuit Diagram
+The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in Fig 1. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. First, a 8 bit SRAM cell is build using eight 1 Bit SRAM. They are accessed by 3 bit address using a 3x8 decoder which is implemented in digital domain as shown in Fig 2. 
+
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157652578-c5bfb134-c1a2-4abe-9431-2b881085eb0c.png">
+<img src="https://user-images.githubusercontent.com/99788755/194602256-0cc2c215-91e0-4d79-bb9c-70e9178ee6d6.png">
 </p> 
 <p align="center">
-Fig 1. Pseudo-random-sequence (PRS) generator
+Fig 1. Standard 6T SRAM Cell 
 </p>
 
 <p align="center">
