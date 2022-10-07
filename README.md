@@ -257,7 +257,7 @@ Fig 11.  Makerchip plots for PRS generator (Compare value 10000000)
 # References
 [1] Jesal P. Gajjar1, Aesha S. Zala2, Sandeep K. Aggarwal, Design and Analysis of 32 bit SRAM architecture in 90nm CMOS Technology, International Research Journal of Engineering and Technology (IRJET), Volume 03, Issue 04, April 2016 
 
-[2] [E. D. Lipson, K. W. Foster and M. P. Walsh, "A versatile pseudo-random noise generator," in IEEE Transactions on Instrumentation and Measurement, vol. IM-25, no. 2, pp. 112-116, June 1976, doi: 10.1109/TIM.1976.6312323.](https://github.com/htrinath/8-bit-RAM-mixed-signal-design)
+[2] https://github.com/htrinath/8-bit-RAM-mixed-signal-design
 
 [3] Kang, Sung-Mo, Leblebici and Yusuf, “CMOS Digital integrated circuits Analysis and Design”, McGraw-Hill International Editions, 2nd Edition
 
