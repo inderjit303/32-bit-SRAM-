@@ -235,9 +235,11 @@ It is a tool which converts Verilog code to C++ objects. Refer: https://www.veri
 
 # Pre-Layout implemented Circuit Schematics and Simulations:
 
+
+
 ## Implemented Circuits: 
 
-## 3X8 SRAM Address Decoder:
+## 3X8 SRAM Address Decoder eSim circuit:
 After the NgSpice netlist has been created using Makerchip IDE and NgVeri feature in eSim , we will be able to find the component listed under "eSim_Ngveri" as the module name 'isramsd_decoder'.
 
 
@@ -248,6 +250,15 @@ After the NgSpice netlist has been created using Makerchip IDE and NgVeri featur
 Fig 8. 3x8 decoder Ngveri block
 </p>
 
+## Steps to run generate NgVeri Model
+1. Open eSim
+2. Run NgVeri-Makerchip
+3. Add top level verilog file in Makerchip Tab
+4. Click on NgVeri tab
+5. Add dependency files
+6. Click on Run Verilog to NgSpice Converter
+7. Debug if any errors
+8. Model created successfully
 
 Now to simulate this Digital block in the Analog Environment we will be requiring the ADC and DAC bridges which are provided by the eSim under the "eSim_Hybrid" and can be selected based on the number of inputs and outputs required. Following the above steps will result in the below shown eSim schematic as shown in fig 9. 
 
@@ -260,16 +271,20 @@ Fig 9. 3x8 decoder eSim schematic
 
 
 
+# Pre-Layout Simulation: 
 
-# Steps to run generate NgVeri Model
-1. Open eSim
-2. Run NgVeri-Makerchip
-3. Add top level verilog file in Makerchip Tab
-4. Click on NgVeri tab
-5. Add dependency files
-6. Click on Run Verilog to NgSpice Converter
-7. Debug if any errors
-8. Model created successfully
+## 3X8 SRAM Address Decoder circuit simulation: 
+After making the schematic in eSim and generating the netlist go back to eSim; select the KiCAD to NgSpice converter and give the required parameters, convert the present circuit to NgSpice. After following the above steps run the simulation to get the below output:
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194720339-e3c36c79-7c16-4522-bce0-72db105a059b.png">
+</p> 
+<p align="center">
+Fig 10. Transient Analysis of 3X8 Decoder
+</p>
+
+
 
 # Acknowlegdements
 1. [IIT Bombay](http://iitb.ac.in/)
