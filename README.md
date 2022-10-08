@@ -16,9 +16,9 @@ This repository discusses implmentation of mixed signal design of a 32-bit SRAM 
   * [Makerchip](#makerchip)
   * [Verilator](#verilator)
 - [Pre-Layout implemented Circuit Schematics and Simulations](#Pre-Layout-implemented-Circuit-Schematics-and-Simulations)
-  * [eSim](#esim)
-  * [NgSpice](#ngspice)
-- [Steps to run generate NgVeri Model](#steps-to-run-generate-ngveri-model)
+  * [Implemented Circuits](#Implemented-Circuits)
+  * [Pre-Layout Simulation in eSim](#Pre-Layout-Simulation-in-eSim)
+- [Author](#Author)
 - [Acknowlegdements](#acknowlegdements)
 - [References](#references)
 
