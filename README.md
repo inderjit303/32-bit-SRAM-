@@ -374,6 +374,14 @@ The 8 bit SRAM cell symbol is next created and named as '8_bit_SRAM_isd'. Four s
 Fig 12. 8 Bit SRAM subcircuit  symbol
 </p>
 
+Finally, after creation of the all the above symbols of 8 Bit SRAM, we interconnect the 5x32 decoder and four 8-Bit SRAMs as shown in the schematic to create the 32-Bit SRAM. Based on the input given to the decoder the SRAM cell is selected and the read/write operation is performed.
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194726302-36042b2a-33bd-494b-a98b-480c93f61c03.png">
+</p> 
+<p align="center">
+Fig 12. 32 Bit SRAM cell circuit schematic 
+</p>
 
 
 # Pre-Layout Simulation in eSim: 
@@ -420,7 +428,7 @@ As seen from above waveforms, using subcircuit feature in eSim, makes the comple
 This approach of using sub-circuit to create a circuit schematic is known as 'Modular design approach' i.e breaking bigger circuit into smaller parts. 
 
 ## 8-Bit SRAM cell circuit simulation:
-After making the schematic and generating the netlist, similar steps are carried out to simulate the circuit and get the desired output as shown below: 
+After making the schematic and generating the netlist, similar steps are carried out to simulate the 8 bit SRAM circuit and get the desired output as shown below: 
 
 
 <p align="center">
@@ -430,7 +438,22 @@ After making the schematic and generating the netlist, similar steps are carried
 Fig 10. Transient Analysis of 8 bit SRAM cell 
 </p>
 
+## 32-Bit SRAM cell circuit simulation:
+After making the schematic and generating the netlist of 32 bit SRAM circuit schematic, similar steps are carried out to simulate the 32 bit SRAM circuit and get the desired output as shown below: 
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194726461-4d2be05d-3bc1-47c3-854e-ebdaf22937b9.png">
+</p> 
+<p align="center">
+Fig 10. Transient Analysis of 32 bit SRAM cell 
+</p>
+
+As seen, from the waveforms of 32 bit SRAM cell, less than half the outputs are visible in simulation window. This arrangment is donw due to limitation of numbers of plots visbile in one screen. 
+
+
+
+# Author: 
+Inderjit Singh Dhanjal, Assitant Professor, K.J Somaiya college of Engineering, Mumbai, India 
 
 # Acknowlegdements
 1. [IIT Bombay](http://iitb.ac.in/)
