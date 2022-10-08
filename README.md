@@ -314,12 +314,21 @@ Fig 12. 6T SRAM subcircuit Schematic
 ## 3X8 SRAM Address Decoder circuit simulation: 
 After making the schematic in eSim and generating the netlist go back to eSim; select the KiCAD to NgSpice converter and give the required parameters, convert the present circuit to NgSpice. After following the above steps run the simulation to get the below output:
 
-
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194720339-e3c36c79-7c16-4522-bce0-72db105a059b.png">
 </p> 
 <p align="center">
 Fig 10. Transient Analysis of 3X8 Decoder
+</p>
+
+## 6T SRAM cell circuit simulation: 
+After making the schematic using subcircuit feature in eSim and generating the netlist go back to eSim; select the KiCAD to NgSpice converter and give the required parameters, convert the 6T SRAM circuit to NgSpice. After following the above steps run the simulation to get the below output:
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194722118-2db262bc-a860-49a0-89f5-cf467425ecab.png">
+</p> 
+<p align="center">
+Fig 10. Transient Analysis of 6T SRAM cell 
 </p>
 
 
