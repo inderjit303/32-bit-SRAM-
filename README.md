@@ -130,7 +130,29 @@ The truth table for the 3X8 Decoder is as follows:
 
 In this design, the above decoder has been implemented using the MakerChip feature in eSim . After opening the eSIM v2.3, open the MakerChip tab present on the left side and load the file with the Verilog code. We can verify the functionality of the loaded verilog code using the MakerChip EDA tool integrated with the eSim tool. Then we can switch over to the NgVeri tab and use it to convert the verilog code into NgSpice netlist. The verilog code for the above decoder is as follows:
 
-
+```
+module isramsd_decoder(d,a,enbl);
+//this is verilog code for 3x8 SRAM address decoder 
+input [2:0]a;
+input enbl;
+output reg [7:0]d;
+always @(a) 
+  begin
+    if(enbl==1)
+      begin
+        d[0] = !a[0] & !a[1] & !a[2];
+        d[1] = a[0] & !a[1] & !a[2];
+        d[2] = !a[0] & a[1] & !a[2];
+        d[3] = a[0] & a[1] & !a[2];
+        d[4] = !a[0] & !a[1] & a[2];
+        d[5] = a[0] & !a[1] & a[2];
+        d[6] = !a[0] & a[1] & a[2];
+        d[7] = a[0] & a[1] & a[2];
+      end
+    else d = 8'b00000000;
+  end
+endmodule
+```
 
 
 ## Verilog code: 
