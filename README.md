@@ -49,7 +49,7 @@ Fig 2. Functional block for 32 bit SRAM cell
 Fig 2. 1 bit SRAM Cell implementation
 </p>
 
-1 bit RAM cell consists of data writer circuit, 6T RAM cell, pre-charge circuit and a sense amplifier all implemented in analog domain using eSim as shown in Fig 2.
+1 bit RAM cell consists of data writer circuit, 6T RAM cell, pre-charge circuit and a sense amplifier all implemented in analog domain using eSim as shown in Fig 2. First, a 8 bit SRAM cell is build using eight 1 Bit SRAM. They are accessed by 3 bit address using a 3x8 decoder which is implemented in digital domain as shown in fig 3. 
 
 # 3x8 SRAM Address Decoder 
 Decoder is a digital circuit which is used to change a given code into a set of signals. Here we are using a Decoder to select one out of eight 1-bit SRAM cells to perform the read/write operations.
@@ -188,8 +188,10 @@ Fig 7.  Makerchip plots for 5x32 SRAM Address Decoder (a = 10 in decimal, d = 00
 # 6T SRAM Cell: 
 The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in fig 1. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. 
 
+![6T SRAM](https://user-images.githubusercontent.com/99788755/194718431-9a082e3f-82ca-49e2-99b6-e68d749dfe0c.png)
 
-First, a 8 bit SRAM cell is build using eight 1 Bit SRAM. They are accessed by 3 bit address using a 3x8 decoder which is implemented in digital domain as shown in fig 2. 
+
+
 
 
 
