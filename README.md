@@ -33,12 +33,11 @@ The components required for building 32 Bit SRAM cell are:
 4. 6T SRAM cell and 
 5. Sense amplifier circuit implemented in analog domain using eSim. 
 
-
 <p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/194603328-39bbf36f-b60d-43d7-a7e8-ab6d63ed44bc.png">
+<img src="https://user-images.githubusercontent.com/99788755/194718005-4117a875-6010-48e6-9486-85eff340662a.png">
 </p> 
 <p align="center">
-Fig 1. Functional block of 32 bit SRAM 
+Fig 2. Functional block for 32 bit SRAM cell
 </p>
 
 <p align="center">
@@ -63,8 +62,6 @@ Fig 3. 3x8 SRAM Address Decoder
 </p>
 
 As shown above in fig 3, a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0, a1, a2 are used to give the coded signal and the fourth signal enbl acts as an enable. If the en signal is low then all the ouputs d0 to d7 will remain low.
-
-The truth table for the 3X8 Decoder is as follows:
 
 In this design, the above decoder has been implemented using the MakerChip feature in eSim . After opening the eSIM v2.3, open the MakerChip tab present on the left side and load the file with the Verilog code. We can verify the functionality of the loaded verilog code using the MakerChip EDA tool integrated with the eSim tool. Then we can switch over to the NgVeri tab and use it to convert the verilog code into NgSpice netlist. The verilog code for the above decoder is as follows:
 
@@ -107,25 +104,84 @@ Fig 4.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 i
 The 5x32 SRAM Address Decoder is be used to select the 32-bit SRAM cell to which we want to perform the read/write operation.
 
 
-![5to32_decoder_sym_1 1](https://user-images.githubusercontent.com/99788755/194717818-d5bc5b2c-f084-4e2a-8d6b-63db34574999.png)
-
-
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194717815-1424ad1b-a2aa-44fd-a004-5e86822567f3.png">
 </p> 
 <p align="center">
-Fig 4.  5x32 SRAM Address Decoder
+Fig 5.  5x32 SRAM Address Decoder
 </p>
 
-As shown above in fig 4, a 5x32 decoder has 6 inputs and 32 outputs. The first five inputs a0, a1, a2, a3 and a4 are used to give the coded signal and the sixth signal enbl acts as an enable. If the enbl signal is low then all the ouputs d0 to d7 will remain low.
+As shown above in fig 5, a 5x32 decoder has 6 inputs and 32 outputs. The first five inputs a0, a1, a2, a3 and a4 are used to give the coded signal and the sixth signal enbl acts as an enable. If the enbl signal is low then all the ouputs d0 to d7 will remain low.
 
 The truth table for the 5X32 Decoder is as follows:
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194717799-2b8b3a9b-5f27-47a2-bb40-66d0849ea5ee.png">
 </p> 
 <p align="center">
-Fig 4.  Truth table for 5x32 SRAM Address Decoder
+Fig 6.  Truth table for 5x32 SRAM Address Decoder
 </p>
+
+The steps to create Ngveri model in eSim are similar to that of 3x8 Decoder. 
+The verilog code for the above decoder is as follows:
+
+```
+module fivetothree_two_decoder_isd(d,a,enbl);
+input [4:0]a;
+input enbl;
+output reg [31:0]d;
+always @(a) 
+  begin
+    if(enbl==1)
+      begin
+        d[0] = !a[0] & !a[1] & !a[2] & !a[3] & !a[4];
+        d[1] = a[0] & !a[1] & !a[2] & !a[3] & !a[4]; 
+        d[2] = !a[0] & a[1] & !a[2] & !a[3] & !a[4];
+        d[3] = a[0] & a[1] & !a[2] & !a[3] & !a[4];
+        d[4] = !a[0] & !a[1] & a[2] & !a[3] & !a[4];
+        d[5] = a[0] & !a[1] & a[2] & !a[3] & !a[4];
+        d[6] = !a[0] & a[1] & a[2] & !a[3] & !a[4];
+        d[7] = a[0] & a[1] & a[2] & !a[3] & !a[4];
+        d[8] = !a[0] & !a[1] & !a[2] & a[3] & !a[4];
+        d[9] = a[0] & !a[1] & !a[2] & a[3] & !a[4];
+        d[10] = !a[0] & a[1] & !a[2] & a[3] & !a[4];
+        d[11] = a[0] & a[1] & !a[2] & a[3] & !a[4]; 
+        d[12] = !a[0] & !a[1] & a[2] & a[3] & !a[4];
+        d[13] = a[0] & !a[1] & a[2] & a[3] & !a[4];
+        d[14] = !a[0] & a[1] & a[2] & a[3] & !a[4];
+        d[15] = a[0] & a[1] & a[2] & a[3] & !a[4];
+        d[16] = !a[0] & !a[1] & !a[2] & !a[3] & a[4];
+        d[17] = a[0] & !a[1] & !a[2] & !a[3] & a[4]; 
+        d[18] = !a[0] & a[1] & !a[2] & !a[3] & a[4];
+        d[19] = a[0] & a[1] & !a[2] & !a[3] & a[4];
+        d[20] = !a[0] & !a[1] & a[2] & !a[3] & a[4];
+        d[21] = a[0] & !a[1] & a[2] & !a[3] & a[4];
+        d[22] = !a[0] & a[1] & a[2] & !a[3] & a[4];
+        d[23] = a[0] & a[1] & a[2] & !a[3] & a[4];
+        d[24] = !a[0] & !a[1] & !a[2] & a[3] & a[4];
+        d[25] = a[0] & !a[1] & !a[2] & a[3] & a[4];
+        d[26] = !a[0] & a[1] & !a[2] & a[3] & a[4];
+        d[27] = a[0] & a[1] & !a[2] & a[3] & a[4]; 
+        d[28] = !a[0] & !a[1] & a[2] & a[3] & a[4];
+        d[29] = a[0] & !a[1] & a[2] & a[3] & a[4];
+        d[30] = !a[0] & a[1] & a[2] & a[3] & a[4];
+        d[31] = a[0] & a[1] & a[2] & a[3] & a[4];
+      end
+    else d = 32'b00000000000000000000000000000000;
+  end
+endmodule
+```
+
+##Makerchip plots: 
+
+Makerchip output plot for 5x32 SRAM Address Decoder is shown in fig 7. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194718145-f9c5aac6-ccdb-434c-88cf-999ec25f451c.png">
+</p> 
+<p align="center">
+Fig 7.  Makerchip plots for 5x32 SRAM Address Decoder (a = 10 in decimal, d = 00000400 in hex and enbl = 1) 
+</p>
+
 
 
 # 6T SRAM Cell: 
