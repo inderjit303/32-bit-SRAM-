@@ -186,13 +186,13 @@ Fig 7.  Makerchip plots for 5x32 SRAM Address Decoder (a = 10 in decimal, d = 00
 
 
 # 6T SRAM Cell: 
-The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in fig 1. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. There are 3 inputs to the 6T RAM cell which are Write line(wl), Bit line(bl) and Bit line bar(blbar). When the wl is high the N-MOSFETs on either sides of the latched inverters are switched on so that the value in the bl, blb are transferred to opposite sides of the inverter network overriding the already present value.
+The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in fig 8. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. There are 3 inputs to the 6T RAM cell which are Write line(wl), Bit line(bl) and Bit line bar(blbar). When the wl is high the N-MOSFETs on either sides of the latched inverters are switched on so that the value in the bl, blb are transferred to opposite sides of the inverter network overriding the already present value.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194718431-9a082e3f-82ca-49e2-99b6-e68d749dfe0c.png">
 </p> 
 <p align="center">
-Fig 7.  6T SRAM Cell 
+Fig 8.  6T SRAM Cell 
 </p>
 
 
@@ -233,6 +233,32 @@ https://www.makerchip.com/
 It is a tool which converts Verilog code to C++ objects. Refer: https://www.veripool.org/verilator/
 
 ## Google Sky Water 130nm PDK 
+
+# Pre-Layout implemented Circuit Schematics and Simulations:
+
+# Implemented Circuits: 
+
+## 3X8 SRAM Address Decoder:
+After the NgSpice netlist has been created using Makerchip IDE and NgVeri feature in eSim , we will be able to find the component listed under "eSim_Ngveri" as the module name 'isramsd_decoder'.
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194719845-2a217e82-73fd-43b5-a779-0b94af045d7a.png">
+</p> 
+<p align="center">
+Fig 8. 3x8 decoder Ngveri block
+</p>
+
+
+Now to simulate this Digital block in the Analog Environment we will be requiring the ADC and DAC bridges which are provided by the eSim under the "eSim_Hybrid" and can be selected based on the number of inputs and outputs required. Following the above steps will result in the below shown eSim schematic as shown in fig 9. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194719991-78db57c9-e0fc-4f16-8eaa-7f5aa10540bf.png">
+</p> 
+<p align="center">
+Fig 9. 3x8 decoder eSim schematic
+</p>
+
 
 
 
