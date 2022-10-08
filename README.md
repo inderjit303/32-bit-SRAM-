@@ -197,16 +197,24 @@ Fig 7.  6T SRAM Cell
 
 
 # Data Writer circuit: 
+In read operation, the bit-lines are pre-charged to Vdd during the read operation, so if a write operation occurs, one of the bit-lines should driven back to low logic before enabling access transistors. Write drivers are used for this purpose. This circuit provides the input to the 6T SRAM cell. The funtionality of this block is to provide bl and blbar to the SRAM cell, when the inputs wl and win are high the bl and blbar will also be high else both the outputs will be low. For this design the Writer Circuit has been designed using the NgVeri feature of the eSim. 
+The Verilog code is as follows:
+
+```
+module idata_writer_cktsd(bl,blbar,wl,win);
+  input wl,win;
+  output reg bl,blbar;
+  always @(wl,win) begin
+    bl = wl & win;
+    blbar = !bl;
+  end
+endmodule
+```
 
 
 
+Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic during a read operation. The function of sense amplifier is to amplify the very small analog differential voltage between the bit-lines during a read operation and provide a digital output. 
 
-
-Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic during a read operation. The function of sense amplifier is to amplify the very small analog differential voltage between the bit-lines during a read operation and provide a digital output. In read operation, the bit-lines are pre-charged to Vdd during the read operation, so if a write operation occurs, one of the bit-lines should driven back to low logic before enabling access transistors. Write drivers are used for this purpose.
-
-
-
-Digital block will be implemented in Verilog, whereas analog block will be implemented in eSim as shown in Fig 4. 
 
 
 
