@@ -24,9 +24,9 @@ This repository discusses implmentation of mixed signal design of a 32-bit SRAM 
 # Abstract
 Today, Static Random Access Memory (SRAM) has become a standard memory element of any Application Specific Integrated Circuit (ASIC), System-On-Chips (SoC), because they are fast, robust, nearly universally found on the same die with microcontrollers and microprocessors. This paper presents detailed implementation of 32 bit SRAM using eSim and SKY130 PDK. SRAM is much faster than DRAM (Dynamic RAM), so to utilize SRAM to the fullest we have the concept of caching the memory i.e we save the data in SRAMs on first load so that in the consecutive load time reduces drastically. SRAM can retain its stored information as long as power is supplied. The term random access means that in an array of SRAM cells each cell can be read or written in any order, no matter which cell was last accessed. SRAMs are majorly used in server based web applications because the servers are usually switched on all the time. 
 
-# Buidling blocks for 32 bit SRAM: 
+# Building blocks for 32 bit SRAM: 
 
-The components required for buidling 32 Bit SRAM cell are:
+The components required for building 32 Bit SRAM cell are:
 1. 5x32 SRAM Address Decoder and 3x8 SRAM Address Decoder implemented in digital domain using NgVeri
 2. 1-bit SRAM cell as shown in fig 6 which further consists of
 3. Data writer circuit implemented in digital domain using NgVeri
