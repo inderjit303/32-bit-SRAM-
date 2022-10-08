@@ -400,7 +400,7 @@ As seen from above waveforms, using subcircuit feature in eSim, makes the comple
 This approach of using sub-circuit to create a circuit schematic is known as 'Modular design approach' i.e breaking bigger circuit into smaller parts. 
 
 ## 8-Bit SRAM cell circuit simulation:
-After making the schematic and generating the netlist, similar steps are carried out to simulate the circuit adn get the desired output as shown below: 
+After making the schematic and generating the netlist, similar steps are carried out to simulate the circuit and get the desired output as shown below: 
 
 
 <p align="center">
