@@ -288,7 +288,7 @@ Then using the Sub-circuit feature in the eSim create the schematic without the 
 <img src="https://user-images.githubusercontent.com/99788755/194721721-a03de1a3-f54d-455b-92a5-0dacb21e386c.png">
 </p> 
 <p align="center">
-Fig 10. 6T SRAM subcircuit Symbol
+Fig 11. 6T SRAM subcircuit Symbol
 </p>
 
 Then using this 6T SRAM symbol, we create 6T SRAM circuit schematic and simulate the circuit as shown in fig 11. 
@@ -298,7 +298,7 @@ Then using this 6T SRAM symbol, we create 6T SRAM circuit schematic and simulate
 <img src="https://user-images.githubusercontent.com/99788755/194721812-c25df719-71e0-4799-8523-80cb5617ee91.png">
 </p> 
 <p align="center">
-Fig 10. 6T SRAM subcircuit Schematic 
+Fig 12. 6T SRAM subcircuit Schematic 
 </p>
 
 
