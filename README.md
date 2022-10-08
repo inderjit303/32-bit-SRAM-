@@ -116,11 +116,17 @@ Fig 6. 1 bit SRAM Cell implementation
 # 3x8 SRAM Address Decoder 
 Decoder is a digital circuit which is used to change a given code into a set of signals. Here we are using a Decoder to select one out of eight 1-bit SRAM cells to perform the read/write operations.
 
-![decoder esim ngveri block 1](https://user-images.githubusercontent.com/99788755/194687836-528f8db3-f482-488b-9fb1-3b44ef875e47.png)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194687836-528f8db3-f482-488b-9fb1-3b44ef875e47.png">
+</p> 
+<p align="center">
+Fig 7. 3x8 SRAM Address Decoder
+</p>
 
-As show above a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0,a1,a2 are used to give the coded signal and the fourth signal en acts as an enable. If the en signal is low then all the ouputs y0 to y7 will remain low.
 
-![decoder esim ngveri block](https://user-images.githubusercontent.com/99788755/194687827-46580e6f-0126-4c04-bd7b-3ebc1215eef9.png)
+As shown above in fig 7, a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0,a1,a2 are used to give the coded signal and the fourth signal en acts as an enable. If the en signal is low then all the ouputs y0 to y7 will remain low.
+
+
 
 
 ## Verilog code: 
