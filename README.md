@@ -214,11 +214,6 @@ endmodule
 # Sense amplifier circuit: 
 This circuit is used to read the data present in the SRAM cell. It has an Read Enable(r_en) pin which when high gives the value present in the SRAM cell as output. Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic during a read operation. The function of sense amplifier is to amplify the very small analog differential voltage between the bit-lines during a read operation and provide a digital output.
 
-
-
-
-
- 
 # Open Source Tools Used:
 
 ## eSim
@@ -239,22 +234,6 @@ It is a tool which converts Verilog code to C++ objects. Refer: https://www.veri
 
 ## Google Sky Water 130nm PDK 
 
-
-# 8 Bit SRAM building blocks: 
-The components required for buidling 8 Bit SRAM cell are:
-1. 3x8 SRAM Address Decoder implemented in digital domain using NgVeri
-2. 1-bit SRAM cell which further consists of
-3. Data writer circuit implemented in digital domain using NgVeri
-4. 6T SRAM cell and 
-5. Sense amplifier circuit implemented in analog domain using eSim. 
-The 3x8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which we want to perform the read/write operation to. Basic implementation of a 1-bit SRAM will be as shown in fig 6 
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/194603243-135b7f27-5ea2-4242-be6f-ff23c8fe97eb.png">
-</p> 
-<p align="center">
-Fig 6. 1 bit SRAM Cell implementation
-</p>
 
 
 # Steps to run generate NgVeri Model
