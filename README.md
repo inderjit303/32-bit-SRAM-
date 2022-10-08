@@ -345,6 +345,15 @@ The inputs for 1 bit SRAM cell ,is 'wl', 'win', 'r_enbl' and 1 bit output.
 Fig 12. 1 Bit SRAM subcircuit schematic 
 </p>
 
+## 8-Bit SRAM Circuit Schematic:
+After creation of the all the above symbols of 1 Bit SRAM, we interconnect the 3x8 decoder and the 1-Bit SRAMs as shown in the schematic to create the 8-Bit SRAM. Based on the input given to the decoder the SRAM cell is selected and the read/write operation is performed.
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194724688-e63ad13c-547d-44ac-925a-d3944369a510.png">
+</p> 
+<p align="center">
+Fig 12. 8 Bit SRAM schematic 
+</p>
 
 
 # Pre-Layout Simulation in eSim: 
