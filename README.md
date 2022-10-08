@@ -33,6 +33,8 @@ The components required for building 32 Bit SRAM cell are:
 4. 6T SRAM cell and 
 5. Sense amplifier circuit implemented in analog domain using eSim. 
 
+The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. The functional block diagram of 32 bit SRAM is shown in fig 1
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194718005-4117a875-6010-48e6-9486-85eff340662a.png">
 </p> 
@@ -183,9 +185,11 @@ Fig 7.  Makerchip plots for 5x32 SRAM Address Decoder (a = 10 in decimal, d = 00
 </p>
 
 
-
 # 6T SRAM Cell: 
-The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in fig 1. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. First, a 8 bit SRAM cell is build using eight 1 Bit SRAM. They are accessed by 3 bit address using a 3x8 decoder which is implemented in digital domain as shown in fig 2. 
+The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in fig 1. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. 
+
+
+First, a 8 bit SRAM cell is build using eight 1 Bit SRAM. They are accessed by 3 bit address using a 3x8 decoder which is implemented in digital domain as shown in fig 2. 
 
 
 
