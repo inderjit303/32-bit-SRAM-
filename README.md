@@ -5,18 +5,18 @@ This repository discusses implmentation of mixed signal design of a 32-bit SRAM 
 
 - [Abstract](#abstract)
 - [Building blocks for 32 bit SRAM](#building-blocks-for-32-bit-SRAM)
-- [Reference Waveform](#reference-waveform)
-- [Reference circuit details](#reference-circuit-details)
-- [Software Used](#software-used)
+- [3x8 SRAM Address Decoder](#3x8-SRAM-Address-Decoder)
+- [5x32 SRAM Address Decoder](#5x32-SRAM-Address-Decoder)
+- [6T SRAM Cell](#6T-SRAM-Cell)
+- [Data Writer circuit](#Data-Writer-circuit) 
+- [Sense amplifier circuit](#Sense-amplifier-circuit)
+- [Open Source Tools Used](#Open-Source-Tools-Used)
   * [eSim](#esim)
   * [NgSpice](#ngspice)
   * [Makerchip](#makerchip)
   * [Verilator](#verilator)
-- [Circuit Diagram in eSim](#circuit-diagram-in-esim)
-- [PRS generator block](#prs-generator-block)
-- [Sine wave Look up table block](#sine-wave-look-up-table-block) 
-- [Netlist](#netlist) 
-- [NgSpice plots](#ngspice-plots) 
+- [Pre-Layout implemented Circuit Schematics and Simulations](#Pre-Layout-implemented-Circuit-Schematics-and-Simulations)
+- 
 - [Steps to run generate NgVeri Model](#steps-to-run-generate-ngveri-model)
 - [Acknowlegdements](#acknowlegdements)
 - [References](#references)
@@ -181,7 +181,7 @@ Makerchip output plot for 5x32 SRAM Address Decoder is shown in fig 7.
 <img src="https://user-images.githubusercontent.com/99788755/194718145-f9c5aac6-ccdb-434c-88cf-999ec25f451c.png">
 </p> 
 <p align="center">
-Fig 7.  Makerchip plots for 5x32 SRAM Address Decoder (a = 10 in decimal, d = 00000400 in hex and enbl = 1) 
+Fig 7. Makerchip plots for 5x32 SRAM Address Decoder (a = 10 in decimal, d = 00000400 in hex and enbl = 1) 
 </p>
 
 
@@ -192,7 +192,7 @@ The structure of a 6 transistor SRAM cell, storing one bit of information, can b
 <img src="https://user-images.githubusercontent.com/99788755/194718431-9a082e3f-82ca-49e2-99b6-e68d749dfe0c.png">
 </p> 
 <p align="center">
-Fig 8.  6T SRAM Cell 
+Fig 8. 6T SRAM Cell 
 </p>
 
 
