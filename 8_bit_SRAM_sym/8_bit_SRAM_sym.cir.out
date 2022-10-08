@@ -1,0 +1,21 @@
+* /home/inderjitsingh/esim-2.3/library/subcircuitlibrary/8_bit_sram_sym/8_bit_sram_sym.cir
+
+.include 1bit_sram_sym.sub
+x1 net-_u1-pad10_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad11_ 1bit_sram_sym
+x2 net-_u1-pad3_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad12_ 1bit_sram_sym
+x3 net-_u1-pad4_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad13_ 1bit_sram_sym
+x4 net-_u1-pad5_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad14_ 1bit_sram_sym
+x5 net-_u1-pad6_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad15_ 1bit_sram_sym
+x6 net-_u1-pad7_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad16_ 1bit_sram_sym
+x7 net-_u1-pad8_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad17_ 1bit_sram_sym
+x8 net-_u1-pad9_ net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad18_ 1bit_sram_sym
+* u1  net-_u1-pad1_ net-_u1-pad2_ net-_u1-pad3_ net-_u1-pad4_ net-_u1-pad5_ net-_u1-pad6_ net-_u1-pad7_ net-_u1-pad8_ net-_u1-pad9_ net-_u1-pad10_ net-_u1-pad11_ net-_u1-pad12_ net-_u1-pad13_ net-_u1-pad14_ net-_u1-pad15_ net-_u1-pad16_ net-_u1-pad17_ net-_u1-pad18_ port
+.tran 0e-00 0e-00 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+.endc
+.end
