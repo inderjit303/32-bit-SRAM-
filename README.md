@@ -453,7 +453,7 @@ As seen, from the waveforms of 32 bit SRAM cell, less than half the outputs are 
 
 
 # Author: 
-Inderjit Singh Dhanjal, Assitant Professor, K.J Somaiya college of Engineering, Mumbai, India 
+Inderjit Singh Dhanjal, Assistant Professor, K.J Somaiya college of Engineering, Mumbai, India 
 
 # Acknowlegdements
 1. [IIT Bombay](http://iitb.ac.in/)
