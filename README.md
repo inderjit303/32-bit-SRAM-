@@ -91,7 +91,7 @@ always @(a)
 endmodule
 ```
 
-##Makerchip plots: 
+**Makerchip plots: **
 
 Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 4. 
 
@@ -173,7 +173,7 @@ always @(a)
 endmodule
 ```
 
-##Makerchip plots: 
+**Makerchip plots: **
 
 Makerchip output plot for 5x32 SRAM Address Decoder is shown in fig 7. 
 
@@ -207,16 +207,7 @@ Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic duri
 Digital block will be implemented in Verilog, whereas analog block will be implemented in eSim as shown in Fig 4. After creation of the all the symbols using sub-circuit feature, interconnection of the Decoder and the 1-Bit SRAMs will be carried out as shown in the schematic to create the 8-Bit SRAM and then create another sub circuit symbol to interconnect address decoder and 32 bit SRAM. 
 
 
-# Reference circuit waveforms
 
-Fig. 5 depicts the Transient input and output waveforms for a 8 bit SRAM
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/194603953-d528f7cc-c15c-4862-90e5-fb5bada1ad4d.png">
-</p> 
-<p align="center">
-Fig 5. Transient input and output waveforms of 8 bit SRAM
-</p>
 
  
 # Open Source Tools Used:
