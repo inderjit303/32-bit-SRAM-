@@ -24,7 +24,78 @@ This repository discusses implmentation of mixed signal design of a 32-bit SRAM 
 # Abstract
 Today, Static Random Access Memory (SRAM) has become a standard memory element of any Application Specific Integrated Circuit (ASIC), System-On-Chips (SoC), because they are fast, robust, nearly universally found on the same die with microcontrollers and microprocessors. This paper presents detailed implementation of 32 bit SRAM using eSim and SKY130 PDK. SRAM is much faster than DRAM (Dynamic RAM), so to utilize SRAM to the fullest we have the concept of caching the memory i.e we save the data in SRAMs on first load so that in the consecutive load time reduces drastically. SRAM can retain its stored information as long as power is supplied. The term random access means that in an array of SRAM cells each cell can be read or written in any order, no matter which cell was last accessed. SRAMs are majorly used in server based web applications because the servers are usually switched on all the time. 
 
-# Reference Circuit Diagram
+# Buidling blocks for 32 bit SRAM: 
+
+The components required for buidling 32 Bit SRAM cell are:
+1. 5x32 SRAM Address Decoder and 3x8 SRAM Address Decoder implemented in digital domain using NgVeri
+2. 1-bit SRAM cell as shown in fig 6 which further consists of
+3. Data writer circuit implemented in digital domain using NgVeri
+4. 6T SRAM cell and 
+5. Sense amplifier circuit implemented in analog domain using eSim. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194603243-135b7f27-5ea2-4242-be6f-ff23c8fe97eb.png">
+</p> 
+<p align="center">
+Fig 6. 1 bit SRAM Cell implementation
+</p>
+
+# 3x8 SRAM Address Decoder 
+Decoder is a digital circuit which is used to change a given code into a set of signals. Here we are using a Decoder to select one out of eight 1-bit SRAM cells to perform the read/write operations.
+
+The 3x8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which we want to perform the read/write operation to. Basic implementation of a 1-bit SRAM will be as shown in fig 7
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194687836-528f8db3-f482-488b-9fb1-3b44ef875e47.png">
+</p> 
+<p align="center">
+Fig 6. 3x8 SRAM Address Decoder
+</p>
+
+As shown above in fig 7, a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0, a1, a2 are used to give the coded signal and the fourth signal enbl acts as an enable. If the en signal is low then all the ouputs d0 to d7 will remain low.
+
+The truth table for the 3X8 Decoder is as follows:
+
+In this design, the above decoder has been implemented using the MakerChip feature in eSim . After opening the eSIM v2.3, open the MakerChip tab present on the left side and load the file with the Verilog code. We can verify the functionality of the loaded verilog code using the MakerChip EDA tool integrated with the eSim tool. Then we can switch over to the NgVeri tab and use it to convert the verilog code into NgSpice netlist. The verilog code for the above decoder is as follows:
+
+```
+module isramsd_decoder(d,a,enbl);
+//this is verilog code for 3x8 SRAM address decoder 
+input [2:0]a;
+input enbl;
+output reg [7:0]d;
+always @(a) 
+  begin
+    if(enbl==1)
+      begin
+        d[0] = !a[0] & !a[1] & !a[2];
+        d[1] = a[0] & !a[1] & !a[2];
+        d[2] = !a[0] & a[1] & !a[2];
+        d[3] = a[0] & a[1] & !a[2];
+        d[4] = !a[0] & !a[1] & a[2];
+        d[5] = a[0] & !a[1] & a[2];
+        d[6] = !a[0] & a[1] & a[2];
+        d[7] = a[0] & a[1] & a[2];
+      end
+    else d = 8'b00000000;
+  end
+endmodule
+```
+
+##Makerchip plots: 
+
+Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 8. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png">
+</p> 
+<p align="center">
+Fig 8.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
+</p>
+
+
+
+
 The structure of a 6 transistor SRAM cell, storing one bit of information, can be seen in Fig 1. The core of the cell is formed by two CMOS inverters. This feedback loop stabilizes the inverters to their respective state. The access transistors Mn3 & Mn4 the word and bit lines, wl and bl, are used to read and write from or to the cell. The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. First, a 8 bit SRAM cell is build using eight 1 Bit SRAM. They are accessed by 3 bit address using a 3x8 decoder which is implemented in digital domain as shown in Fig 2. 
 
 <p align="center">
@@ -112,58 +183,6 @@ The 3x8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which w
 <p align="center">
 Fig 6. 1 bit SRAM Cell implementation
 </p>
-
-# 3x8 SRAM Address Decoder 
-Decoder is a digital circuit which is used to change a given code into a set of signals. Here we are using a Decoder to select one out of eight 1-bit SRAM cells to perform the read/write operations.
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/194687836-528f8db3-f482-488b-9fb1-3b44ef875e47.png">
-</p> 
-<p align="center">
-Fig 7. 3x8 SRAM Address Decoder
-</p>
-
-As shown above in fig 7, a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0, a1, a2 are used to give the coded signal and the fourth signal enbl acts as an enable. If the en signal is low then all the ouputs d0 to d7 will remain low.
-
-The truth table for the 3X8 Decoder is as follows:
-
-In this design, the above decoder has been implemented using the MakerChip feature in eSim . After opening the eSIM v2.3, open the MakerChip tab present on the left side and load the file with the Verilog code. We can verify the functionality of the loaded verilog code using the MakerChip EDA tool integrated with the eSim tool. Then we can switch over to the NgVeri tab and use it to convert the verilog code into NgSpice netlist. The verilog code for the above decoder is as follows:
-
-```
-module isramsd_decoder(d,a,enbl);
-//this is verilog code for 3x8 SRAM address decoder 
-input [2:0]a;
-input enbl;
-output reg [7:0]d;
-always @(a) 
-  begin
-    if(enbl==1)
-      begin
-        d[0] = !a[0] & !a[1] & !a[2];
-        d[1] = a[0] & !a[1] & !a[2];
-        d[2] = !a[0] & a[1] & !a[2];
-        d[3] = a[0] & a[1] & !a[2];
-        d[4] = !a[0] & !a[1] & a[2];
-        d[5] = a[0] & !a[1] & a[2];
-        d[6] = !a[0] & a[1] & a[2];
-        d[7] = a[0] & a[1] & a[2];
-      end
-    else d = 8'b00000000;
-  end
-endmodule
-```
-
-##Makerchip plots: 
-
-Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 8. 
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png">
-</p> 
-<p align="center">
-Fig 8.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
-</p>
-
 
 
 # Steps to run generate NgVeri Model
