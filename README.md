@@ -105,20 +105,27 @@ Fig 4.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 i
 
 # 5x32 SRAM Address Decoder 
 The 5x32 SRAM Address Decoder is be used to select the 32-bit SRAM cell to which we want to perform the read/write operation.
-![5to32_decoder_sym_1](https://user-images.githubusercontent.com/99788755/194717815-1424ad1b-a2aa-44fd-a004-5e86822567f3.png)
+
 
 ![5to32_decoder_sym_1 1](https://user-images.githubusercontent.com/99788755/194717818-d5bc5b2c-f084-4e2a-8d6b-63db34574999.png)
 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png">
+<img src="https://user-images.githubusercontent.com/99788755/194717815-1424ad1b-a2aa-44fd-a004-5e86822567f3.png">
 </p> 
 <p align="center">
-Fig 4.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
+Fig 4.  5x32 SRAM Address Decoder
 </p>
 
-![truth table](https://user-images.githubusercontent.com/99788755/194717799-2b8b3a9b-5f27-47a2-bb40-66d0849ea5ee.png)
+As shown above in fig 4, a 5x32 decoder has 6 inputs and 32 outputs. The first five inputs a0, a1, a2, a3 and a4 are used to give the coded signal and the sixth signal enbl acts as an enable. If the enbl signal is low then all the ouputs d0 to d7 will remain low.
 
+The truth table for the 5X32 Decoder is as follows:
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194717799-2b8b3a9b-5f27-47a2-bb40-66d0849ea5ee.png">
+</p> 
+<p align="center">
+Fig 4.  Truth table for 5x32 SRAM Address Decoder
+</p>
 
 
 # 6T SRAM Cell: 
