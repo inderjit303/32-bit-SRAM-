@@ -154,7 +154,8 @@ always @(a)
 endmodule
 ```
 
-## Makerchip plots
+##Makerchip plots: 
+
 Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 8. 
 
 <p align="center">
