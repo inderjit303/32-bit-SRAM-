@@ -33,13 +33,13 @@ The components required for building 32 Bit SRAM cell are:
 4. 6T SRAM cell and 
 5. Sense amplifier circuit implemented in analog domain using eSim. 
 
-The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. The functional block diagram of 32 bit SRAM is shown in fig 1
+The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. The functional block diagram of 32 bit SRAM is shown in fig 1. After creation of the all the symbols using sub-circuit feature in eSim, interconnection of the Decoder and the 1-Bit SRAMs will be implemented  to create the 8-Bit SRAM and then create another sub circuit symbol for four such 8 bit SRAM to interconnect address decoder and 32 bit SRAM. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194718005-4117a875-6010-48e6-9486-85eff340662a.png">
 </p> 
 <p align="center">
-Fig 2. Functional block for 32 bit SRAM cell
+Fig 1. Functional block for 32 bit SRAM cell
 </p>
 
 <p align="center">
@@ -91,7 +91,7 @@ always @(a)
 endmodule
 ```
 
-**Makerchip plots: **
+Makerchip plots: 
 
 Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 4. 
 
@@ -173,7 +173,7 @@ always @(a)
 endmodule
 ```
 
-**Makerchip plots: **
+Makerchip plots: 
 
 Makerchip output plot for 5x32 SRAM Address Decoder is shown in fig 7. 
 
@@ -196,6 +196,8 @@ Fig 7.  6T SRAM Cell
 </p>
 
 
+# Data Writer circuit: 
+
 
 
 
@@ -204,7 +206,7 @@ Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic duri
 
 
 
-Digital block will be implemented in Verilog, whereas analog block will be implemented in eSim as shown in Fig 4. After creation of the all the symbols using sub-circuit feature, interconnection of the Decoder and the 1-Bit SRAMs will be carried out as shown in the schematic to create the 8-Bit SRAM and then create another sub circuit symbol to interconnect address decoder and 32 bit SRAM. 
+Digital block will be implemented in Verilog, whereas analog block will be implemented in eSim as shown in Fig 4. 
 
 
 
