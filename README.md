@@ -162,7 +162,7 @@ Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 8.
 <img src="https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png">
 </p> 
 <p align="center">
-Fig 8.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal and d = 10 in hex ) 
+Fig 8.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
 </p>
 
 
