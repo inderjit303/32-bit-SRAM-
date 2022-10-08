@@ -281,7 +281,7 @@ Fig 10. 6T SRAM circuit schematic
 </p>
 
 
-Then using the Sub-circuit feature in the eSim create the schematic without the sources and replacing the pins with ports, generate the netlist and then go ahead to create a symbol.
+Then using the Sub-circuit feature in the eSim create the schematic without the sources and replacing the pins with ports, generate the netlist and then go ahead to create a symbol named '6T_isramsd'.
 
 
 <p align="center">
@@ -303,7 +303,7 @@ Fig 12. 6T SRAM subcircuit Schematic
 
 
 # 1-Bit SRAM Cell:
-1 Bit SRAM cell, consists of writer circuit which is created similar to the 3x8 decoder as shown below.
+1 Bit SRAM cell, consists of writer circuit subcircuit symbol named 'idata_writer_cktsd' which is created similar to the 3x8 decoder as shown below with inputs as 'wl' and 'win' and output as 'bl' and 'blbar'. 
 
 
 <p align="center">
@@ -313,10 +313,34 @@ Fig 12. 6T SRAM subcircuit Schematic
 Fig 12. Data writer circuit symbol 
 </p>
 
-After creating the 6T SRAM and data writer circuit's schematics & symbols, we interconnect all the components to get the below schematic. Then after verifying the functionality the circuit can be converted to a symbol using the Sub-Circuit features. The Symbol and schematic will look as follows:
+1 Bit SRAM cell consists of Data writer circuit with ADC and DAC bridges, and sensing circuit. 
 
 
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194722708-c7ef5e86-bde1-469b-ab1b-496323b614d9.png">
+</p> 
+<p align="center">
+Fig 12. 1 Bit SRAM cell circuit 
+</p>
 
+
+After creating the 6T SRAM and data writer circuit's schematics & symbols, we interconnect all the components to get the below schematic. Then after verifying the functionality the circuit can be converted to a symbol using the Sub-Circuit features. The Symbol and schematic of 1 Bit SRAM cell is shown as follows: 
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194722889-36e95223-268f-410c-950c-953d28d4d5c5.png">
+</p> 
+<p align="center">
+Fig 12. 1 Bit SRAM cell symbol
+</p>
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194722911-2877ee36-28c0-4268-8c77-372a9df8d41e.png">
+</p> 
+<p align="center">
+Fig 12. 1 Bit SRAM subcircuit schematic 
+</p>
 
 
 
