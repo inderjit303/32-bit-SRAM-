@@ -100,7 +100,11 @@ It is a tool which converts Verilog code to C++ objects. Refer: https://www.veri
 # 8 Bit SRAM buidling blocks: 
 The components required for buidling 8 Bit SRAM cell are:
 1. 3X8 SRAM Address Decoder implemented in digital domain using NgVeri
-2. 1-bit SRAM cell which further consists of data writer circuit implemented in digital domain using NgVeri, 6T SRAM cell and a sense amplifier circuit all implemented in analog domain using eSim. The 3X8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which we want to perform the read/write operation to. Basic implementation of a 1-bit SRAM will be as shown in fig 6 
+2. 1-bit SRAM cell which further consists of
+3. Data writer circuit implemented in digital domain using NgVeri
+4. 6T SRAM cell and 
+5. Sense amplifier circuit implemented in analog domain using eSim. 
+The 3X8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which we want to perform the read/write operation to. Basic implementation of a 1-bit SRAM will be as shown in fig 6 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194603243-135b7f27-5ea2-4242-be6f-ff23c8fe97eb.png">
