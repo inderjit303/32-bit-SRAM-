@@ -154,57 +154,17 @@ always @(a)
 endmodule
 ```
 
-
-## Verilog code: 
-```
-module inderjit_prs8bit_generator (clk, rst, out);
-    input clk, rst;
-    reg [8:1] compare;
-    output reg out;
-    reg [8:1] sr;
-    //reg [8:1] compare;
-    always @(posedge clk)
-    begin
-        if (rst) begin
-            sr  <= 8'b10101010;     // initial non-zero value
-            out <= 0;
-        end
-        else begin
-            sr[8:2] <= sr[7:1];
-            sr[1]   <= sr[4] ^ sr[5] ^ sr[6] ^ sr[8];
-	    compare = 8'h80;
-            out     <= (compare >= sr);    
-        end
-    end
-endmodule
-```
-
-
-
 ## Makerchip plots
 Makerchip output plots for PRS generator block are shown in fig 9. As the sift register value range is between 1 to 255 means if compare value is  11111111, the output will be always 1. If the compare value is 0, the output will always be 0. Fig 9 shows the compressed version of the PRS generator block waveforms for compare value 11111110 which shows one low pulse in a periodic stream after 255 clock pulses with 8 bit PRS period (i.e 2^n-1, where n = 8)  
+
+![makerchip1_decoder_output1](https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png)
+
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/157675138-d0c3ee30-9377-4740-b1a1-d2958eeb0f2a.png">
 </p> 
 <p align="center">
 Fig 9.  Makerchip plots for PRS generator (Compressed version: Compare value 11111110) 
-</p>
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157675162-61685b52-6ee3-4d8a-bf16-16d07941b3d7.png">
-</p> 
-<p align="center">
-Fig 10.  Makerchip plots for PRS generator (Compare value 11111110) 
-</p>
-
-Fig 10 shows PRS generator block output waveforms for compare value 10100000 which shows output high when compare value is above or equal the value in the shift register.
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157675195-5fbe69cf-504c-4653-906b-82803f48b3b5.png">
-</p> 
-<p align="center">
-Fig 11.  Makerchip plots for PRS generator (Compare value 10000000) 
 </p>
 
 
