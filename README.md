@@ -355,6 +355,26 @@ After creation of the all the above symbols of 1 Bit SRAM, we interconnect the 3
 Fig 12. 8 Bit SRAM schematic 
 </p>
 
+## 32-Bit SRAM Circuit Schematic:
+After creation of 8 bit SRAM circuit schematic, we utilize the concept of modular design approach, and create subcircuit for 8 bit SRAM cell as shown below 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194726053-dc5a3d81-dc7c-440a-a6ab-75bae0927032.png">
+</p> 
+<p align="center">
+Fig 12. 8 Bit SRAM subcircuit  
+</p>
+
+The 8 bit SRAM cell symbol is next created and named as '8_bit_SRAM_isd'. Four such 8 bit SRAM symbols are further utilized to create 32 bit SRAM cell. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194726111-dfb35a3a-e523-48f0-9020-c30c036b1034.png">
+</p> 
+<p align="center">
+Fig 12. 8 Bit SRAM subcircuit  symbol
+</p>
+
+
 
 # Pre-Layout Simulation in eSim: 
 
