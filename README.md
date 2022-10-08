@@ -4,7 +4,7 @@
 This repository discusses implmentation of mixed signal design of a 32-bit SRAM using eSim and Google Skywater 130nm PDK 
 
 - [Abstract](#abstract)
-- [Reference Circuit Diagram](#reference-circuit-diagram)
+- [Building blocks for 32 bit SRAM](#building-blocks-for-32-bit-SRAM)
 - [Reference Waveform](#reference-waveform)
 - [Reference circuit details](#reference-circuit-details)
 - [Software Used](#software-used)
