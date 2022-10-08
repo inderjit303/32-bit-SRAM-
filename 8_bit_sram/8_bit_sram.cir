@@ -1,0 +1,41 @@
+* /home/inderjitsingh/eSim-Workspace/8_bit_sram/8_bit_sram.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Sat 08 Oct 2022 11:09:07 AM IST
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+U5  a2 a1 a0 Net-_U5-Pad4_ Net-_U1-Pad1_ Net-_U1-Pad2_ Net-_U1-Pad3_ Net-_U1-Pad4_ adc_bridge_4		
+U1  Net-_U1-Pad1_ Net-_U1-Pad2_ Net-_U1-Pad3_ Net-_U1-Pad4_ Net-_U1-Pad5_ Net-_U1-Pad6_ Net-_U1-Pad7_ Net-_U1-Pad8_ Net-_U1-Pad9_ Net-_U1-Pad10_ Net-_U1-Pad11_ Net-_U1-Pad12_ isramsd_decoder		
+U7  Net-_U1-Pad5_ Net-_U1-Pad6_ Net-_U1-Pad7_ Net-_U1-Pad8_ Net-_U1-Pad9_ Net-_U1-Pad10_ Net-_U1-Pad11_ Net-_U1-Pad12_ Net-_U7-Pad9_ Net-_U7-Pad10_ Net-_U7-Pad11_ Net-_U7-Pad12_ Net-_U7-Pad13_ Net-_U7-Pad14_ Net-_U7-Pad15_ Net-_U7-Pad16_ dac_bridge_8		
+v1  a2 GND pulse		
+v2  a1 GND pulse		
+v3  a0 GND pulse		
+v4  Net-_U5-Pad4_ GND DC		
+U2  a2 plot_v1		
+U3  a1 plot_v1		
+U4  a0 plot_v1		
+X1  Net-_U7-Pad9_ win r_enbl out7 1_bit_SRAM_isd		
+X2  Net-_U7-Pad10_ win r_enbl out6 1_bit_SRAM_isd		
+X3  Net-_U7-Pad11_ win r_enbl out5 1_bit_SRAM_isd		
+X4  Net-_U7-Pad12_ win r_enbl out4 1_bit_SRAM_isd		
+X5  Net-_U7-Pad13_ win r_enbl out3 1_bit_SRAM_isd		
+X6  Net-_U7-Pad14_ win r_enbl out2 1_bit_SRAM_isd		
+X7  Net-_U7-Pad15_ win r_enbl out1 1_bit_SRAM_isd		
+X8  Net-_U7-Pad16_ win r_enbl out0 1_bit_SRAM_isd		
+v5  win GND pulse		
+U6  win plot_v1		
+v6  r_enbl GND pulse		
+U8  r_enbl plot_v1		
+U9  out7 plot_v1		
+U10  out6 plot_v1		
+U11  out5 plot_v1		
+U12  out4 plot_v1		
+U13  out3 plot_v1		
+U14  out2 plot_v1		
+U15  out1 plot_v1		
+U16  out0 plot_v1		
+scmode1  SKY130mode		
+
+.end
