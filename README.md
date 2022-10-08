@@ -111,7 +111,7 @@ The 5x32 SRAM Address Decoder is be used to select the 32-bit SRAM cell to which
 Fig 5.  5x32 SRAM Address Decoder
 </p>
 
-As shown above in fig 5, a 5x32 decoder has 6 inputs and 32 outputs. The first five inputs a0, a1, a2, a3 and a4 are used to give the coded signal and the sixth signal enbl acts as an enable. If the enbl signal is low then all the ouputs d0 to d7 will remain low.
+As shown above in fig 5, a 5x32 decoder has 6 inputs and 32 outputs. The first five inputs a0, a1, a2, a3 and a4 are used to give the coded signal and the sixth signal enbl acts as an enable. If the enbl signal is low then all the ouputs d0 to d31 will remain low.
 
 The truth table for the 5X32 Decoder is as follows:
 <p align="center">
@@ -121,7 +121,7 @@ The truth table for the 5X32 Decoder is as follows:
 Fig 6.  Truth table for 5x32 SRAM Address Decoder
 </p>
 
-The steps to create Ngveri model in eSim are similar to that of 3x8 Decoder. 
+The steps to create Ngveri model for 5x32 decoder in eSim are similar to that of 3x8 Decoder. 
 The verilog code for the above decoder is as follows:
 
 ```
