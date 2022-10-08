@@ -269,9 +269,12 @@ Now to simulate this Digital block in the Analog Environment we will be requirin
 Fig 9. 3x8 decoder eSim schematic
 </p>
 
+## 6T SRAM circuit Schematic: 
+
+For this circuit in the schematic we can select the SKY130 PDK MOSFETS under the "eSim_Devices", connect the circuit as shown in the circuit, annotate the components, perform electrical rules check and generate netlist to complete the schematic. Then using the Sub-circuit feature in the eSIM create the schematic without the sources and replacing the pins with ports, generate the netlist and then go ahead to create a symbol.
 
 
-# Pre-Layout Simulation: 
+# Pre-Layout Simulation in eSim: 
 
 ## 3X8 SRAM Address Decoder circuit simulation: 
 After making the schematic in eSim and generating the netlist go back to eSim; select the KiCAD to NgSpice converter and give the required parameters, convert the present circuit to NgSpice. After following the above steps run the simulation to get the below output:
