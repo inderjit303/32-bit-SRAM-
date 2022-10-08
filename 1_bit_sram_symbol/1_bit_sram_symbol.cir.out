@@ -1,0 +1,29 @@
+* /home/inderjitsingh/esim-workspace/1_bit_sram_symbol/1_bit_sram_symbol.cir
+
+.include 1bit_sram_sym.sub
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__inductors.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__diode_pd2nw_11v0.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__linear.model.spice"
+.lib "/usr/share/local/sky130_fd_pr/models/sky130.lib.spice" tt
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__r+c.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__pnp.model.spice"
+.include "/usr/share/local/sky130_fd_pr/models/sky130_fd_pr__model__diode_pw2nd_11v0.model.spice"
+x1 wl win r_enbl out 1bit_sram_sym
+v3  r_enbl gnd pulse(0 1.8 5u 1n 1n 10u 20u)
+v2  win gnd pulse(0 1.8 0 1n 1n 1u 2u)
+v1  wl gnd pulse(0 1.8 5u 1n 1n 5u 10u)
+* u1  wl plot_v1
+* u2  win plot_v1
+* u3  r_enbl plot_v1
+* u4  out plot_v1
+* s c m o d e
+.tran 1e-06 20e-06 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(wl)+8 v(win)+6 v(r_enbl)+4 v(out)+2
+.endc
+.end

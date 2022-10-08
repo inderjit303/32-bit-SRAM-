@@ -1,0 +1,19 @@
+* /home/inderjitsingh/eSim-Workspace/1_bit_sram_symbol/1_bit_sram_symbol.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Sat 08 Oct 2022 02:33:43 AM IST
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+X1  wl win r_enbl out 1_bit_SRAM_isd		
+v3  r_enbl GND pulse		
+v2  win GND pulse		
+v1  wl GND pulse		
+U1  wl plot_v1		
+U2  win plot_v1		
+U3  r_enbl plot_v1		
+U4  out plot_v1		
+scmode1  SKY130mode		
+
+.end
