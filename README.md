@@ -372,12 +372,23 @@ Fig 10. Transient Analysis of 6T SRAM cell
 ## 1-Bit SRAM cell circuit simulation:
 After making the schematic and generating the netlist go back to eSim; select the KiCAD to NgSpice converter and give the required parameters(such as analysis type, source details, device information, subcircuit information etc), convert the present circuit to NgSpice. After following the above steps run the simulation to get the below output:
 
-![output_1bit_sram_1](https://user-images.githubusercontent.com/99788755/194723528-ea22a4ef-5571-444c-8cb7-7062dbcc28df.png)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194723528-ea22a4ef-5571-444c-8cb7-7062dbcc28df.png">
+</p> 
+<p align="center">
+Fig 10. Transient Analysis of 1 bit SRAM cell 
+</p>
 
 
-![output_1bit_sram_symbol_1](https://user-images.githubusercontent.com/99788755/194723531-1ce0d480-9d9e-4cde-8b30-762f7b261639.png)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194723531-1ce0d480-9d9e-4cde-8b30-762f7b261639.png">
+</p> 
+<p align="center">
+Fig 10. Transient Analysis of 1 bit SRAM cell using subcircuit symbol
+</p>
 
-
+As seen from above waveforms, using subcircuit feature in eSim, makes the complex circuit simpler for analysis and simulation. 
+This approach of using sub-circuit to create a circuit schematic is known as 'Modular design approach' i.e breaking bigger circuit into smaller parts. 
 
 
 # Acknowlegdements
