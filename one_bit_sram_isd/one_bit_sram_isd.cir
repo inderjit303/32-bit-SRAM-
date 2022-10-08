@@ -1,0 +1,29 @@
+* /home/inderjitsingh/eSim-Workspace/one_bit_sram_isd/one_bit_sram_isd.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Sat 08 Oct 2022 01:17:09 AM IST
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+U4  wl win Net-_U2-Pad1_ Net-_U2-Pad2_ adc_bridge_2		
+U5  Net-_U2-Pad3_ Net-_U2-Pad4_ bl blbar dac_bridge_2		
+X1  bl wl q blbar 6t_isramsd		
+v2  win GND pulse		
+v1  wl GND pulse		
+SC2  Net-_SC1-Pad1_ q Net-_SC2-Pad3_ Net-_SC2-Pad3_ sky130_fd_pr__nfet_01v8		
+SC3  Net-_SC2-Pad3_ r_enbl GND GND sky130_fd_pr__nfet_01v8		
+SC1  Net-_SC1-Pad1_ q Net-_SC1-Pad3_ Net-_SC1-Pad3_ sky130_fd_pr__pfet_01v8		
+SC4  Net-_SC1-Pad1_ r_enbl Net-_SC1-Pad3_ Net-_SC1-Pad3_ sky130_fd_pr__pfet_01v8		
+SC5  out Net-_SC1-Pad1_ Net-_SC1-Pad3_ ? sky130_fd_pr__pfet_01v8		
+SC6  out Net-_SC1-Pad1_ GND GND sky130_fd_pr__nfet_01v8		
+v3  Net-_SC1-Pad3_ GND DC		
+v4  r_enbl GND pulse		
+U7  out plot_v1		
+U6  r_enbl plot_v1		
+U1  wl plot_v1		
+U3  win plot_v1		
+scmode1  SKY130mode		
+U2  Net-_U2-Pad1_ Net-_U2-Pad2_ Net-_U2-Pad3_ Net-_U2-Pad4_ idata_writer_cktsd		
+
+.end

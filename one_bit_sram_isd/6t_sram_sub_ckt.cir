@@ -1,0 +1,18 @@
+* /home/inderjitsingh/eSim-2.3/library/SubcircuitLibrary/6t_sram_sub_ckt/6t_sram_sub_ckt.cir
+
+* EESchema Netlist Version 1.1 (Spice format) creation date: Thu 06 Oct 2022 10:09:06 PM IST
+
+* To exclude a component from the Spice Netlist add [Spice_Netlist_Enabled] user FIELD set to: N
+* To reorder the component spice node sequence add [Spice_Node_Sequence] user FIELD and define sequence: 2,1,0
+
+* Sheet Name: /
+SC5  Net-_SC2-Pad2_ Net-_SC1-Pad1_ GND GND sky130_fd_pr__nfet_01v8		
+SC3  Net-_SC1-Pad1_ Net-_SC2-Pad2_ GND GND sky130_fd_pr__nfet_01v8		
+SC1  Net-_SC1-Pad1_ Net-_SC1-Pad2_ Net-_SC1-Pad3_ GND sky130_fd_pr__nfet_01v8		
+SC6  Net-_SC6-Pad1_ Net-_SC1-Pad2_ Net-_SC2-Pad2_ GND sky130_fd_pr__nfet_01v8		
+SC4  Net-_SC2-Pad2_ Net-_SC1-Pad1_ Net-_SC2-Pad3_ Net-_SC2-Pad3_ sky130_fd_pr__pfet_01v8		
+SC2  Net-_SC1-Pad1_ Net-_SC2-Pad2_ Net-_SC2-Pad3_ Net-_SC2-Pad3_ sky130_fd_pr__pfet_01v8		
+v1  Net-_SC2-Pad3_ GND DC		
+U1  Net-_SC1-Pad3_ Net-_SC1-Pad2_ Net-_SC1-Pad1_ Net-_SC6-Pad1_ PORT		
+
+.end

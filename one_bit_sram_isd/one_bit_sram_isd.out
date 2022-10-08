@@ -1,0 +1,1409 @@
+optran: no such command available in ngspice
+
+Compatibility modes selected: hs a
+
+Warning: m=xx on .subckt line will override multiplier m hierarchy!
+
+Warning: redefinition of .subckt sky130_fd_pr__model__parasitic__res_po, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_xhigh_po, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_high_po, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_xhigh_po_0p35, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_xhigh_po_0p69, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_xhigh_po_1p41, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_xhigh_po_2p85, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_xhigh_po_5p73, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_xhigh_po__base, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_high_po_0p35, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_high_po_0p69, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_high_po_1p41, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_high_po_2p85, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_high_po_5p73, ignored
+Warning: redefinition of .subckt sky130_fd_pr__pnp_05v5_w0p68l0p68, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_generic_po, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_generic_nd, ignored
+Warning: redefinition of .subckt sky130_fd_pr__res_generic_pd, ignored
+
+Circuit: * /home/inderjitsingh/esim-workspace/one_bit_sram_isd/one_bit_sram_isd.cir
+
+option SCALE: Scale is set to 1e-06 for instance and model parameters
+Reducing trtol to 1 for xspice 'A' devices
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: include: has no value, DC 0 assumed
+Warning: v4: no DC value, transient time 0 value used
+Warning: v1: no DC value, transient time 0 value used
+Warning: v2: no DC value, transient time 0 value used
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=0
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 0
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+No. of Data Rows : 769
+ERROR: (internal)  This operation is not defined for display type PrinterOnly.
+Can't open viewport for graphics.
+binary raw file "/home/inderjitsingh/eSim-Workspace/one_bit_sram_isd/one_bit_sram_isd.raw"
+Reducing trtol to 1 for xspice 'A' devices
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: include: has no value, DC 0 assumed
+Warning: v4: no DC value, transient time 0 value used
+Warning: v1: no DC value, transient time 0 value used
+Warning: v2: no DC value, transient time 0 value used
+No. of Data Columns : 59  
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=0
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=0
+win=1
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+=============idata_writer_cktsd : New Iteration===========
+Instance : 1
+
+Inside foo before eval.....
+wl=1
+win=1
+bl=1
+blbar=0
+
+Inside foo after eval.....
+wl=1
+win=0
+bl=0
+blbar=1
+
+No. of Data Rows : 766
+
+Total analysis time (seconds) = 0.19059
+
+Total CPU time (seconds) = 10.749 
+
+Total DRAM available = 257855.305 MB.
+DRAM currently available = 248918.863 MB.
+Maximum ngspice program size =  397.551 MB.
+Current ngspice program size =  331.949 MB.
+
+Shared ngspice pages =    9.926 MB.
+Text (code) pages =    6.285 MB.
+Stack = 0 bytes.
+Library pages =  325.199 MB.
+
