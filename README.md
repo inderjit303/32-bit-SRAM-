@@ -291,7 +291,7 @@ Then using the Sub-circuit feature in the eSim create the schematic without the 
 Fig 11. 6T SRAM subcircuit Symbol
 </p>
 
-Then using this 6T SRAM symbol, we create 6T SRAM circuit schematic and simulate the circuit as shown in fig 11. 
+Then using this 6T SRAM symbol, we create 6T SRAM circuit schematic and simulate the circuit as shown in fig 12. Note, while simulating the circuit, we have to keep SKY130mode ON.  
 
 
 <p align="center">
