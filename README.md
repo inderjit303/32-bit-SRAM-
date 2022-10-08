@@ -302,7 +302,18 @@ Fig 12. 6T SRAM subcircuit Schematic
 </p>
 
 
+# 1-Bit SRAM Cell:
+1 Bit SRAM cell, consists of writer circuit which is created similar to the 3x8 decoder as shown below.
 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194722410-acd87587-5713-4d08-a453-3357b58e88d3.png">
+</p> 
+<p align="center">
+Fig 12. Data writer circuit symbol 
+</p>
+
+After creating the 6T SRAM and data writer circuit's schematics & symbols, we interconnect all the components to get the below schematic. Then after verifying the functionality the circuit can be converted to a symbol using the Sub-Circuit features. The Symbol and schematic will look as follows:
 
 
 
