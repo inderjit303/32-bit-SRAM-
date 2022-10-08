@@ -76,7 +76,7 @@ Fig 5. Transient input and output waveforms of 8 bit SRAM
 </p>
 
  
-# Softwares Used
+# Open Source Tools Used:
 
 ## eSim
 It is an Open Source EDA developed by FOSSEE, IIT Bombay. It is used for electronic circuit simulation. It is made by the combination of two software namely NgSpice and KiCAD.
@@ -99,12 +99,12 @@ It is a tool which converts Verilog code to C++ objects. Refer: https://www.veri
 
 # 8 Bit SRAM building blocks: 
 The components required for buidling 8 Bit SRAM cell are:
-1. 3X8 SRAM Address Decoder implemented in digital domain using NgVeri
+1. 3x8 SRAM Address Decoder implemented in digital domain using NgVeri
 2. 1-bit SRAM cell which further consists of
 3. Data writer circuit implemented in digital domain using NgVeri
 4. 6T SRAM cell and 
 5. Sense amplifier circuit implemented in analog domain using eSim. 
-The 3X8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which we want to perform the read/write operation to. Basic implementation of a 1-bit SRAM will be as shown in fig 6 
+The 3x8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which we want to perform the read/write operation to. Basic implementation of a 1-bit SRAM will be as shown in fig 6 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194603243-135b7f27-5ea2-4242-be6f-ff23c8fe97eb.png">
@@ -122,7 +122,6 @@ Decoder is a digital circuit which is used to change a given code into a set of 
 <p align="center">
 Fig 7. 3x8 SRAM Address Decoder
 </p>
-
 
 As shown above in fig 7, a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0, a1, a2 are used to give the coded signal and the fourth signal enbl acts as an enable. If the en signal is low then all the ouputs d0 to d7 will remain low.
 
@@ -164,6 +163,7 @@ Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 8.
 <p align="center">
 Fig 8.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
 </p>
+
 
 
 # Steps to run generate NgVeri Model
