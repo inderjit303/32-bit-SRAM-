@@ -271,7 +271,42 @@ Fig 9. 3x8 decoder eSim schematic
 
 ## 6T SRAM circuit Schematic: 
 
-For this circuit in the schematic we can select the SKY130 PDK MOSFETS under the "eSim_Devices", connect the circuit as shown in the circuit, annotate the components, perform electrical rules check and generate netlist to complete the schematic. Then using the Sub-circuit feature in the eSIM create the schematic without the sources and replacing the pins with ports, generate the netlist and then go ahead to create a symbol.
+For creation of 6T SRAM eSim circuit, we first select the sky130_fd_pr_nfet_01v8 NMOS transistor and sky130_pfd_pr_pfet_01v8 PMOS transistor under the "eSim_SKY130" from choose component option. Then connect the circuit as shown in fig 10. Next annotate the components, perform electrical rules check and generate netlist to complete the 6T SRAM circuit schematic. 
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194721650-370d4081-a882-458f-a1c0-e1d414efb204.png">
+</p> 
+<p align="center">
+Fig 10. 6T SRAM circuit schematic
+</p>
+
+
+Then using the Sub-circuit feature in the eSim create the schematic without the sources and replacing the pins with ports, generate the netlist and then go ahead to create a symbol.
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194721721-a03de1a3-f54d-455b-92a5-0dacb21e386c.png">
+</p> 
+<p align="center">
+Fig 10. 6T SRAM subcircuit Symbol
+</p>
+
+Then using this 6T SRAM symbol, we create 6T SRAM circuit schematic and simulate the circuit as shown in fig 11. 
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194721812-c25df719-71e0-4799-8523-80cb5617ee91.png">
+</p> 
+<p align="center">
+Fig 10. 6T SRAM subcircuit Schematic 
+</p>
+
+
+
+
+
+
+
 
 
 # Pre-Layout Simulation in eSim: 
