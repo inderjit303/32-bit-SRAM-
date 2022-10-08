@@ -53,7 +53,7 @@ Fig 2. 1 bit SRAM Cell implementation
 # 3x8 SRAM Address Decoder 
 Decoder is a digital circuit which is used to change a given code into a set of signals. Here we are using a Decoder to select one out of eight 1-bit SRAM cells to perform the read/write operations.
 
-The 3x8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which we want to perform the read/write operation to. Basic implementation of a 1-bit SRAM will be as shown in fig 3
+The 3x8 SRAM Address Decoder is be used to select the 8-bit SRAM cell to which we want to perform the read/write operation.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194687836-528f8db3-f482-488b-9fb1-3b44ef875e47.png">
@@ -94,15 +94,30 @@ endmodule
 
 ##Makerchip plots: 
 
-Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 8. 
+Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 4. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png">
 </p> 
 <p align="center">
-Fig 8.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
+Fig 4.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
 </p>
 
+# 5x32 SRAM Address Decoder 
+The 5x32 SRAM Address Decoder is be used to select the 32-bit SRAM cell to which we want to perform the read/write operation.
+![5to32_decoder_sym_1](https://user-images.githubusercontent.com/99788755/194717815-1424ad1b-a2aa-44fd-a004-5e86822567f3.png)
+
+![5to32_decoder_sym_1 1](https://user-images.githubusercontent.com/99788755/194717818-d5bc5b2c-f084-4e2a-8d6b-63db34574999.png)
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png">
+</p> 
+<p align="center">
+Fig 4.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal, d = 10 in hex and enbl = 1) 
+</p>
+
+![truth table](https://user-images.githubusercontent.com/99788755/194717799-2b8b3a9b-5f27-47a2-bb40-66d0849ea5ee.png)
 
 
 
