@@ -232,11 +232,10 @@ https://www.makerchip.com/
 ## Verilator
 It is a tool which converts Verilog code to C++ objects. Refer: https://www.veripool.org/verilator/
 
-## Google Sky Water 130nm PDK 
 
 # Pre-Layout implemented Circuit Schematics and Simulations:
 
-# Implemented Circuits: 
+## Implemented Circuits: 
 
 ## 3X8 SRAM Address Decoder:
 After the NgSpice netlist has been created using Makerchip IDE and NgVeri feature in eSim , we will be able to find the component listed under "eSim_Ngveri" as the module name 'isramsd_decoder'.
