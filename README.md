@@ -155,18 +155,14 @@ endmodule
 ```
 
 ## Makerchip plots
-Makerchip output plots for PRS generator block are shown in fig 9. As the sift register value range is between 1 to 255 means if compare value is  11111111, the output will be always 1. If the compare value is 0, the output will always be 0. Fig 9 shows the compressed version of the PRS generator block waveforms for compare value 11111110 which shows one low pulse in a periodic stream after 255 clock pulses with 8 bit PRS period (i.e 2^n-1, where n = 8)  
-
-![makerchip1_decoder_output1](https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png)
-
+Makerchip output plot for 3x8 SRAM Address Decoder is shown in fig 8. 
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157675138-d0c3ee30-9377-4740-b1a1-d2958eeb0f2a.png">
+<img src="https://user-images.githubusercontent.com/99788755/194688388-f6ca8061-57a9-433b-809d-b2814172a6df.png">
 </p> 
 <p align="center">
-Fig 9.  Makerchip plots for PRS generator (Compressed version: Compare value 11111110) 
+Fig 8.  Makerchip plots for 3x8 SRAM Address Decoder (a = 4 in decimal and d = 10 in hex ) 
 </p>
-
 
 
 # Steps to run generate NgVeri Model
