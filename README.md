@@ -97,7 +97,7 @@ It is a tool which converts Verilog code to C++ objects. Refer: https://www.veri
 ## Google Sky Water 130nm PDK 
 
 
-# 8 Bit SRAM buidling blocks: 
+# 8 Bit SRAM building blocks: 
 The components required for buidling 8 Bit SRAM cell are:
 1. 3X8 SRAM Address Decoder implemented in digital domain using NgVeri
 2. 1-bit SRAM cell which further consists of
@@ -113,44 +113,6 @@ The 3X8 SRAM Address Decoder is be used to select the 1-bit SRAM cell to which w
 Fig 6. 1 bit SRAM Cell implementation
 </p>
 
-The following is the first version of schematic in eSim is shown in fig 5
-It consists of 8 bit PRS generator, digital sine wave LUT generator, 10 bit DAC used as 8 bit DAC and 2nd order sallen key low pass filter tuned at 1KHz. 
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157656849-9fb3ed2e-23b5-40e9-98d4-4816fcfcca8d.png">
-</p> 
-<p align="center">
-Fig 5.  Digital sine wave generator circuit (Attempt 1) 
-</p>
-
-First attempt was unsecuccesful, so in 2nd attempt 2nd order sallen key Low pass filter was replaced by RLC circuit tuned at 1KHz frequency as shown in fig 6
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157664044-19782a8a-0194-42e6-9f13-b9ae4c03c8b5.png">
-</p> 
-<p align="center">
-Fig 6.  Digital sine wave generator circuit (Attempt 2) 
-</p>
-
-Second attempt was also unsecuccesful, so in 3rd attempt, number of data points for LUT were increased from 16 to 256 as shown in fig 7
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157726867-270e2832-5507-427c-bfc0-f96a87a78df4.png">
-</p> 
-<p align="center">
-Fig 7.  Digital sine wave generator circuit (Attempt 3) 
-</p>
-
-
-# PRS generator block 
-PRS generator block shown in fig 8, generates a finite stream of numbers in range 1 to 255 equally distributed. In addition we add a compare function, which turns one digital output pin high whenever a value in the shift register (SR) is less the value of the compare input. This will create a stream of high pulses proportional to the compare value. 
-
-<p align="center">
-<img src="https://user-images.githubusercontent.com/99788755/157664490-5ce19e50-ff39-43f1-bd8a-bfad2ffa3002.png">
-</p> 
-<p align="center">
-Fig 8.  PRS generator block
-</p>
 
 ## Verilog code: 
 ```
@@ -176,48 +138,7 @@ module inderjit_prs8bit_generator (clk, rst, out);
 endmodule
 ```
 
-## Makerchip code: 
-```
-\TLV_version 1d: tl-x.org
-\SV
-/* verilator lint_off UNUSED*/  /* verilator lint_off DECLFILENAME*/  /* verilator lint_off BLKSEQ*/  /* verilator lint_off WIDTH*/  /* verilator lint_off SELRANGE*/  /* verilator lint_off PINCONNECTEMPTY*/  /* verilator lint_off DEFPARAM*/  /* verilator lint_off IMPLICIT*/  /* verilator lint_off COMBDLY*/  /* verilator lint_off SYNCASYNCNET*/  /* verilator lint_off UNOPTFLAT */  /* verilator lint_off UNSIGNED*/  /* verilator lint_off CASEINCOMPLETE*/  /* verilator lint_off UNDRIVEN*/  /* verilator lint_off VARHIDDEN*/  /* verilator lint_off CASEX*/  /* verilator lint_off CASEOVERLAP*/  /* verilator lint_off PINMISSING*/ /* verilator lint_off BLKANDNBLK*/  /* verilator lint_off MULTIDRIVEN*/  /* verilator lint_off WIDTHCONCAT*/  /* verilator lint_off ASSIGNDLY*/  /* verilator lint_off MODDUP*/  /* verilator lint_off STMTDLY*/  /* verilator lint_off LITENDIAN*/  /* verilator lint_off INITIALDLY*/
-//Your Verilog/System Verilog Code Starts Here:
 
-module inderjit_prs8bit_generator (clk, rst, out);
-    input clk, rst;
-    reg [8:1] compare;
-    output reg out;
-    reg [8:1] sr;
-    //reg [8:1] compare;
-    always @(posedge clk)
-    begin
-        if (rst) begin
-            sr  <= 8'b10101010;     // initial non-zero value
-            out <= 0;
-        end
-        else begin
-            sr[8:2] <= sr[7:1];
-            sr[1]   <= sr[4] ^ sr[5] ^ sr[6] ^ sr[8];
-	    compare = 8'h80;
-            out     <= (compare >= sr);    
-        end
-    end
-endmodule
-
-
-//Top Module Code Starts here:
-	module top(input logic clk, input logic reset, input logic [31:0] cyc_cnt, output logic passed, output logic failed);
-		logic  rst;//input
-		logic  out;//output
-//The $random() can be replaced if user wants to assign values
-		assign rst = reset;
-		inderjit_prs8bit_generator inderjit_prs8bit_generator(.clk(clk), .rst(rst), .out(out));
-	
-\TLV
-//Add \TLV here if desired                                     
-\SV
-endmodule
-```
 
 ## Makerchip plots
 Makerchip output plots for PRS generator block are shown in fig 9. As the sift register value range is between 1 to 255 means if compare value is  11111111, the output will be always 1. If the compare value is 0, the output will always be 0. Fig 9 shows the compressed version of the PRS generator block waveforms for compare value 11111110 which shows one low pulse in a periodic stream after 255 clock pulses with 8 bit PRS period (i.e 2^n-1, where n = 8)  
@@ -244,7 +165,6 @@ Fig 10 shows PRS generator block output waveforms for compare value 10100000 whi
 <p align="center">
 Fig 11.  Makerchip plots for PRS generator (Compare value 10000000) 
 </p>
-
 
 
 
