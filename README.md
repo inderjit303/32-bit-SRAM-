@@ -324,7 +324,7 @@ Fig 12. 1 Bit SRAM cell circuit
 </p>
 
 
-After creating the 6T SRAM and data writer circuit's schematics & symbols, we interconnect all the components to get the below schematic. Then after verifying the functionality the circuit can be converted to a symbol using the Sub-Circuit features. The Symbol and schematic of 1 Bit SRAM cell is shown as follows: 
+After creating the 6T SRAM and data writer circuit's schematics & symbols, we interconnect all the components to get the below schematic. Then after verifying the functionality the circuit can be converted to a symbol using the Sub-Circuit features.
 
 
 <p align="center">
@@ -334,6 +334,7 @@ After creating the 6T SRAM and data writer circuit's schematics & symbols, we in
 Fig 12. 1 Bit SRAM cell symbol
 </p>
 
+The Symbol and schematic of 1 Bit SRAM cell is shown as follows with SKY130mode ON for simulation purposes. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194722911-2877ee36-28c0-4268-8c77-372a9df8d41e.png">
