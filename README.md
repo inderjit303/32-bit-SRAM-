@@ -346,7 +346,7 @@ Fig 12. 1 Bit SRAM subcircuit schematic
 </p>
 
 ## 8-Bit SRAM Circuit Schematic:
-After creation of the all the above symbols of 1 Bit SRAM, we interconnect the 3x8 decoder and the 1-Bit SRAMs as shown in the schematic to create the 8-Bit SRAM. Based on the input given to the decoder the SRAM cell is selected and the read/write operation is performed.
+After creation of the all the above symbols of 1 Bit SRAM, we interconnect the 3x8 decoder and eight 1-Bit SRAMs as shown in the schematic to create the 8-Bit SRAM. Based on the input given to the decoder the SRAM cell is selected and the read/write operation is performed.
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194724688-e63ad13c-547d-44ac-925a-d3944369a510.png">
@@ -398,6 +398,18 @@ Fig 10. Transient Analysis of 1 bit SRAM cell using subcircuit symbol
 
 As seen from above waveforms, using subcircuit feature in eSim, makes the complex circuit simpler for analysis and simulation. 
 This approach of using sub-circuit to create a circuit schematic is known as 'Modular design approach' i.e breaking bigger circuit into smaller parts. 
+
+## 8-Bit SRAM cell circuit simulation:
+After making the schematic and generating the netlist, similar steps are carried out to simulate the circuit adn get the desired output as shown below: 
+
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/99788755/194725490-4b4b238d-e3aa-4ff4-bde3-c3480d871ddd.png">
+</p> 
+<p align="center">
+Fig 10. Transient Analysis of 8 bit SRAM cell 
+</p>
+
 
 
 # Acknowlegdements
