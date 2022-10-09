@@ -28,13 +28,13 @@ Today, Static Random Access Memory (SRAM) has become a standard memory element o
 # Building blocks for 32 bit SRAM: 
 
 The components required for building 32 Bit SRAM cell are:
-1. 5x32 SRAM Address Decoder and 3x8 SRAM Address Decoder implemented in digital domain using NgVeri
+1. 5x32 SRAM Address Decoder and 3x8 SRAM Address Decoder implemented in digital domain using NgVeri feature in eSim. 
 2. 1-bit SRAM cell as shown in fig 2 which further consists of
 3. Data writer circuit implemented in digital domain using NgVeri
 4. 6T SRAM cell and 
 5. Sense amplifier circuit implemented in analog domain using eSim. 
 
-The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. The functional block diagram of 32 bit SRAM is shown in fig 1. After creation of the all the symbols using sub-circuit feature in eSim, interconnection of the Decoder and the 1-Bit SRAMs will be implemented  to create the 8-Bit SRAM and then create another sub circuit symbol for four such 8 bit SRAM to interconnect address decoder and 32 bit SRAM. 
+The project is about building a 32-bit SRAM memory array, using 130nm CMOS technology and modular design approach. The functional block diagram of 32 bit SRAM is shown in fig 1. Using sub-circuit feature in eSim, interconnection of the Decoder and the 1-Bit SRAMs will be implemented to create the 8-Bit SRAM and then create another sub circuit symbol for four such 8 bit SRAM to interconnect 5x32 address decoder and 32 bit SRAM. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194718005-4117a875-6010-48e6-9486-85eff340662a.png">
@@ -64,9 +64,9 @@ The 3x8 SRAM Address Decoder is be used to select the 8-bit SRAM cell to which w
 Fig 3. 3x8 SRAM Address Decoder
 </p>
 
-As shown above in fig 3, a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0, a1, a2 are used to give the coded signal and the fourth signal enbl acts as an enable. If the en signal is low then all the ouputs d0 to d7 will remain low.
+As shown above in fig 3, a 3X8 decoder has 4 inputs and 8 outputs. The first three inputs a0, a1, a2 are used to give the coded signal and the fourth signal enbl acts as an enable. If the enbl signal is low then all the ouputs d0 to d7 will remain low.
 
-In this design, the above decoder has been implemented using the MakerChip feature in eSim . After opening the eSIM v2.3, open the MakerChip tab present on the left side and load the file with the Verilog code. We can verify the functionality of the loaded verilog code using the MakerChip EDA tool integrated with the eSim tool. Then we can switch over to the NgVeri tab and use it to convert the verilog code into NgSpice netlist. The verilog code for the above decoder is as follows:
+In this design, the above decoder has been implemented using the MakerChip feature in eSim . After opening the eSim v2.3, open the MakerChip tab present on the left side and load the file with the Verilog code. We can verify the functionality of the loaded verilog code using the MakerChip EDA tool integrated with the eSim tool. Then we can switch over to the NgVeri tab and use it to convert the verilog code into NgSpice netlist. The verilog code for the above decoder is as follows:
 
 ```
 module isramsd_decoder(d,a,enbl);
@@ -121,7 +121,7 @@ The truth table for the 5X32 Decoder is as follows:
 <img src="https://user-images.githubusercontent.com/99788755/194717799-2b8b3a9b-5f27-47a2-bb40-66d0849ea5ee.png">
 </p> 
 <p align="center">
-Fig 6.  Truth table for 5x32 SRAM Address Decoder
+Fig 6. Truth table for 5x32 SRAM Address Decoder
 </p>
 
 The steps to create Ngveri model for 5x32 decoder in eSim are similar to that of 3x8 Decoder. 
@@ -236,8 +236,6 @@ It is a tool which converts Verilog code to C++ objects. Refer: https://www.veri
 
 # Pre-Layout implemented Circuit Schematics and Simulations:
 
-
-
 ## Implemented Circuits: 
 
 ## 3X8 SRAM Address Decoder eSim circuit:
@@ -248,7 +246,7 @@ After the NgSpice netlist has been created using Makerchip IDE and NgVeri featur
 <img src="https://user-images.githubusercontent.com/99788755/194719845-2a217e82-73fd-43b5-a779-0b94af045d7a.png">
 </p> 
 <p align="center">
-Fig 8. 3x8 decoder Ngveri block
+Fig 9. 3x8 decoder Ngveri block
 </p>
 
 ## Steps to run generate NgVeri Model
@@ -261,24 +259,24 @@ Fig 8. 3x8 decoder Ngveri block
 7. Debug if any errors
 8. Model created successfully
 
-Now to simulate this Digital block in the Analog Environment we will be requiring the ADC and DAC bridges which are provided by the eSim under the "eSim_Hybrid" and can be selected based on the number of inputs and outputs required. Following the above steps will result in the below shown eSim schematic as shown in fig 9. 
+Now to simulate this Digital block in the Analog Environment we will be requiring the ADC and DAC bridges which are provided by the eSim under the "eSim_Hybrid" and can be selected based on the number of inputs and outputs required. Following the above steps will result in the below shown eSim schematic as shown in fig 10. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194719991-78db57c9-e0fc-4f16-8eaa-7f5aa10540bf.png">
 </p> 
 <p align="center">
-Fig 9. 3x8 decoder eSim schematic
+Fig 10. 3x8 decoder eSim schematic
 </p>
 
 ## 6T SRAM circuit Schematic: 
 
-For creation of 6T SRAM eSim circuit, we first select the sky130_fd_pr_nfet_01v8 NMOS transistor and sky130_pfd_pr_pfet_01v8 PMOS transistor under the "eSim_SKY130" from choose component option. Then connect the circuit as shown in fig 10. Next annotate the components, perform electrical rules check and generate netlist to complete the 6T SRAM circuit schematic. 
+For creation of 6T SRAM eSim circuit, we first select the sky130_fd_pr_nfet_01v8 NMOS transistor and sky130_pfd_pr_pfet_01v8 PMOS transistor under the "eSim_SKY130" from choose component option. Then connect the circuit as shown in fig 11. Next annotate the components, perform electrical rules check and generate netlist to complete the 6T SRAM circuit schematic. 
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/99788755/194721650-370d4081-a882-458f-a1c0-e1d414efb204.png">
 </p> 
 <p align="center">
-Fig 10. 6T SRAM circuit schematic
+Fig 11. 6T SRAM circuit schematic
 </p>
 
 
@@ -289,7 +287,7 @@ Then using the Sub-circuit feature in the eSim create the schematic without the 
 <img src="https://user-images.githubusercontent.com/99788755/194721721-a03de1a3-f54d-455b-92a5-0dacb21e386c.png">
 </p> 
 <p align="center">
-Fig 11. 6T SRAM subcircuit Symbol
+Fig 12. 6T SRAM subcircuit Symbol
 </p>
 
 Then using this 6T SRAM symbol, we create 6T SRAM circuit schematic and simulate the circuit as shown in fig 12. Note, while simulating the circuit, we have to keep SKY130mode ON.  
@@ -299,7 +297,7 @@ Then using this 6T SRAM symbol, we create 6T SRAM circuit schematic and simulate
 <img src="https://user-images.githubusercontent.com/99788755/194721812-c25df719-71e0-4799-8523-80cb5617ee91.png">
 </p> 
 <p align="center">
-Fig 12. 6T SRAM subcircuit Schematic 
+Fig 13. 6T SRAM subcircuit Schematic 
 </p>
 
 
@@ -311,7 +309,7 @@ Fig 12. 6T SRAM subcircuit Schematic
 <img src="https://user-images.githubusercontent.com/99788755/194722410-acd87587-5713-4d08-a453-3357b58e88d3.png">
 </p> 
 <p align="center">
-Fig 12. Data writer circuit symbol 
+Fig 14. Data writer circuit symbol 
 </p>
 
 1 Bit SRAM cell consists of Data writer circuit with ADC and DAC bridges, and sensing circuit. 
@@ -321,7 +319,7 @@ Fig 12. Data writer circuit symbol
 <img src="https://user-images.githubusercontent.com/99788755/194722708-c7ef5e86-bde1-469b-ab1b-496323b614d9.png">
 </p> 
 <p align="center">
-Fig 12. 1 Bit SRAM cell circuit 
+Fig 15. 1 Bit SRAM cell circuit 
 </p>
 
 
@@ -332,7 +330,7 @@ After creating the 6T SRAM and data writer circuit's schematics & symbols, we in
 <img src="https://user-images.githubusercontent.com/99788755/194722889-36e95223-268f-410c-950c-953d28d4d5c5.png">
 </p> 
 <p align="center">
-Fig 12. 1 Bit SRAM cell symbol
+Fig 16. 1 Bit SRAM cell symbol
 </p>
 
 The Symbol and schematic of 1 Bit SRAM cell is shown as follows with SKY130mode ON for simulation purposes.
@@ -343,7 +341,7 @@ The inputs for 1 bit SRAM cell ,is 'wl', 'win', 'r_enbl' and 1 bit output.
 <img src="https://user-images.githubusercontent.com/99788755/194722911-2877ee36-28c0-4268-8c77-372a9df8d41e.png">
 </p> 
 <p align="center">
-Fig 12. 1 Bit SRAM subcircuit schematic 
+Fig 17. 1 Bit SRAM subcircuit schematic 
 </p>
 
 ## 8-Bit SRAM Circuit Schematic:
@@ -353,7 +351,7 @@ After creation of the all the above symbols of 1 Bit SRAM, we interconnect the 3
 <img src="https://user-images.githubusercontent.com/99788755/194724688-e63ad13c-547d-44ac-925a-d3944369a510.png">
 </p> 
 <p align="center">
-Fig 12. 8 Bit SRAM schematic 
+Fig 18. 8 Bit SRAM schematic 
 </p>
 
 ## 32-Bit SRAM Circuit Schematic:
@@ -363,7 +361,7 @@ After creation of 8 bit SRAM circuit schematic, we utilize the concept of modula
 <img src="https://user-images.githubusercontent.com/99788755/194726053-dc5a3d81-dc7c-440a-a6ab-75bae0927032.png">
 </p> 
 <p align="center">
-Fig 12. 8 Bit SRAM subcircuit  
+Fig 19. 8 Bit SRAM subcircuit  
 </p>
 
 The 8 bit SRAM cell symbol is next created and named as '8_bit_SRAM_isd'. Four such 8 bit SRAM symbols are further utilized to create 32 bit SRAM cell. 
@@ -372,7 +370,7 @@ The 8 bit SRAM cell symbol is next created and named as '8_bit_SRAM_isd'. Four s
 <img src="https://user-images.githubusercontent.com/99788755/194726111-dfb35a3a-e523-48f0-9020-c30c036b1034.png">
 </p> 
 <p align="center">
-Fig 12. 8 Bit SRAM subcircuit  symbol
+Fig 20. 8 Bit SRAM subcircuit  symbol
 </p>
 
 Finally, after creation of the all the above symbols of 8 Bit SRAM, we interconnect the 5x32 decoder and four 8-Bit SRAMs as shown in the schematic to create the 32-Bit SRAM. Based on the input given to the decoder the SRAM cell is selected and the read/write operation is performed.
@@ -381,7 +379,7 @@ Finally, after creation of the all the above symbols of 8 Bit SRAM, we interconn
 <img src="https://user-images.githubusercontent.com/99788755/194726302-36042b2a-33bd-494b-a98b-480c93f61c03.png">
 </p> 
 <p align="center">
-Fig 12. 32 Bit SRAM cell circuit schematic 
+Fig 21. 32 Bit SRAM cell circuit schematic 
 </p>
 
 
@@ -394,7 +392,7 @@ After making the schematic in eSim and generating the netlist go back to eSim; s
 <img src="https://user-images.githubusercontent.com/99788755/194720339-e3c36c79-7c16-4522-bce0-72db105a059b.png">
 </p> 
 <p align="center">
-Fig 10. Transient Analysis of 3X8 Decoder
+Fig 22. Transient Analysis of 3X8 Decoder
 </p>
 
 ## 6T SRAM cell circuit simulation: 
@@ -404,7 +402,7 @@ After making the schematic using subcircuit feature in eSim and generating the n
 <img src="https://user-images.githubusercontent.com/99788755/194722118-2db262bc-a860-49a0-89f5-cf467425ecab.png">
 </p> 
 <p align="center">
-Fig 10. Transient Analysis of 6T SRAM cell 
+Fig 23. Transient Analysis of 6T SRAM cell 
 </p>
 
 ## 1-Bit SRAM cell circuit simulation:
@@ -414,7 +412,7 @@ After making the schematic and generating the netlist go back to eSim; select th
 <img src="https://user-images.githubusercontent.com/99788755/194723528-ea22a4ef-5571-444c-8cb7-7062dbcc28df.png">
 </p> 
 <p align="center">
-Fig 10. Transient Analysis of 1 bit SRAM cell 
+Fig 24. Transient Analysis of 1 bit SRAM cell 
 </p>
 
 
@@ -422,7 +420,7 @@ Fig 10. Transient Analysis of 1 bit SRAM cell
 <img src="https://user-images.githubusercontent.com/99788755/194723531-1ce0d480-9d9e-4cde-8b30-762f7b261639.png">
 </p> 
 <p align="center">
-Fig 10. Transient Analysis of 1 bit SRAM cell using subcircuit symbol
+Fig 25. Transient Analysis of 1 bit SRAM cell using subcircuit symbol
 </p>
 
 As seen from above waveforms, using subcircuit feature in eSim, makes the complex circuit simpler for analysis and simulation. 
@@ -436,7 +434,7 @@ After making the schematic and generating the netlist, similar steps are carried
 <img src="https://user-images.githubusercontent.com/99788755/194725490-4b4b238d-e3aa-4ff4-bde3-c3480d871ddd.png">
 </p> 
 <p align="center">
-Fig 10. Transient Analysis of 8 bit SRAM cell 
+Fig 26. Transient Analysis of 8 bit SRAM cell 
 </p>
 
 ## 32-Bit SRAM cell circuit simulation:
@@ -446,15 +444,14 @@ After making the schematic and generating the netlist of 32 bit SRAM circuit sch
 <img src="https://user-images.githubusercontent.com/99788755/194726461-4d2be05d-3bc1-47c3-854e-ebdaf22937b9.png">
 </p> 
 <p align="center">
-Fig 10. Transient Analysis of 32 bit SRAM cell 
+Fig 27. Transient Analysis of 32 bit SRAM cell 
 </p>
 
 As seen, from the waveforms of 32 bit SRAM cell, less than half the outputs are visible in simulation window. This arrangment is donw due to limitation of numbers of plots visbile in one screen. 
 
 
-
 # Author: 
-Inderjit Singh Dhanjal, Assistant Professor, K.J Somaiya college of Engineering, Mumbai, India 
+Inderjit Singh Dhanjal, Assistant Professor, K.J Somaiya college of Engineering, Mumbai, Maharashtra, India 
 
 # Acknowlegdements
 1. [IIT Bombay](http://iitb.ac.in/)
