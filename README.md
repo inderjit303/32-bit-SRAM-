@@ -1,7 +1,7 @@
 
 # 32-bit SRAM implementation in eSim using Skywater 130nm CMOS technology:
 
-This repository discusses implementation of mixed signal circuit design of a 32-bit SRAM using eSim and Google Skywater 130nm PDK as part of 'Mixed signal SoC Design Marathon using eSim and SKY130
+This repository discusses implementation of mixed signal circuit design of a 32-bit SRAM using eSim and Google Skywater 130nm PDK as part of 'Mixed signal SoC Design Marathon using eSim and SKY130'
 
 - [Abstract](#abstract)
 - [Building blocks for 32 bit SRAM](#building-blocks-for-32-bit-SRAM)
