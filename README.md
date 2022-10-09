@@ -213,7 +213,7 @@ endmodule
 ```
 
 # Sense amplifier circuit: 
-This circuit is used to read the data present in the SRAM cell. It has an Read Enable(r_en) pin which when high gives the value present in the SRAM cell as output. Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic during a read operation. The function of sense amplifier is to amplify the very small analog differential voltage between the bit-lines during a read operation and provide a digital output.
+This circuit is used to read the data present in the SRAM cell. It has an Read Enable(r_enbl) pin which when high gives the value present in the SRAM cell as output. Pre-charge circuit is used to pre-charge the bit-lines to Vdd or high logic during a read operation. The function of sense amplifier is to amplify the very small analog differential voltage between the bit-lines during a read operation and provide a digital output.
 
 # Open Source Tools Used:
 
