@@ -447,7 +447,7 @@ After making the schematic and generating the netlist of 32 bit SRAM circuit sch
 Fig 27. Transient Analysis of 32 bit SRAM cell 
 </p>
 
-As seen, from the waveforms of 32 bit SRAM cell, less than half the outputs are visible in simulation window. This arrangment is donw due to limitation of numbers of plots visbile in one screen. 
+As seen, from the waveforms of 32 bit SRAM cell, less than half the outputs are visible in simulation window. This arrangment is done due to limitation of numbers of plots visible in one screen. 
 
 
 # Author: 
